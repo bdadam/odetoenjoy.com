@@ -1,0 +1,63 @@
+{
+  "name": "odetoenjoy.com",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdadam/odetoenjoy.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bdadam/odetoenjoy.com/issues"
+  },
+  "homepage": "https://github.com/bdadam/odetoenjoy.com#readme",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-react": "^6.24.1",
+    "classnames": "^2.2.5",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-nodemon": "^2.2.1",
+    "html-webpack-plugin": "^2.28.0",
+    "jest-serializer-html-string": "^1.0.1",
+    "lodash": "^4.17.4",
+    "lodash-webpack-plugin": "^0.11.4",
+    "node-sass": "^4.5.3",
+    "node-sass-import": "^1.1.1",
+    "nodemon": "^1.11.0",
+    "preact": "^8.1.0",
+    "preact-helmet": "^4.0.0-alpha-2",
+    "preact-redux": "^2.0.1",
+    "preact-render-to-string": "^3.6.3",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.2",
+    "webpack": "^2.6.1",
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-manifest": "^1.0.8",
+    "webpack-merge": "^4.1.0",
+    "webpack-stream": "^3.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-plugin-compat": "^1.0.3",
+    "eslint-plugin-jest": "^20.0.1",
+    "eslint-plugin-jsx": "^0.0.2",
+    "eslint-plugin-react": "^7.0.1",
+    "json-loader": "^0.5.4"
+  }
+}
