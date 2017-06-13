@@ -1,0 +1,17 @@
+.breadcrumbs {
+    padding: 4px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.breadcrumbs__link {
+    position: relative;
+    display: inline-block;
+
+    &:not(:last-child):after {
+        content: '>';
+        position: relative;
+        display: inline-block;
+        padding: 0 12px;
+    }
+}

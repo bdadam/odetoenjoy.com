@@ -1,0 +1,16 @@
+.site-header {
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 24px;
+}
+
+.site-header__nav {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-header__link {
+    padding: 12px;
+    display: inline-block;
+    font-size: 1.125rem;
+}

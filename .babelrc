@@ -1,0 +1,61 @@
+{
+    "plugins": [
+        [
+            "transform-react-jsx",
+            {
+                "pragma": "h"
+            }
+        ],
+        [
+            "lodash"
+        ]
+        // ["resolver", { "resolveDirs": ["src"] }]
+    ],
+    "presets": [
+        [
+            "env",
+            {
+                "targets": {
+                    "node": true,
+                    "browsers": [
+                        "last 2 Chrome versions",
+                        "last 2 Firefox versions",
+                        "last 2 FirefoxAndroid versions",
+                        "last 2 Safari versions",
+                        "last 2 Edge versions",
+                        "last 2 iOS versions",
+                        "ie >= 11",
+                        "Android >= 5"
+                    ]
+                },
+                "useBuiltIns": true,
+                "loose": true
+            }
+        ],
+        "react"
+    ],
+    "sourceMaps": "inline",
+    "retainLines": true,
+    "env": {
+        "test": {
+            "plugins": [
+                "transform-es2015-modules-commonjs"
+            ]
+        },
+        "node": {
+            "plugins": [
+                "transform-es2015-modules-commonjs",
+                [
+                    "babel-plugin-transform-require-ignore",
+                    {
+                        "extensions": [
+                            ".scss",
+                            ".sass",
+                            ".css"
+                        ]
+                    }
+                ]
+            ]
+        }
+    }
+}
