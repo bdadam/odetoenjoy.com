@@ -5,8 +5,9 @@ import './main.scss';
 
 import SiteHeader from './components/SiteHeader/SiteHeader';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
+import SiteFooter from './components/SiteFooter/SiteFooter';
 
-export default ({x}) => {
+export default ({}) => {
     return (
         <div>
             <Helmet
@@ -21,12 +22,11 @@ export default ({x}) => {
 
             <Breadcrumbs links={[{ text: 'Home', href: '/', title: 'Home' }, { text: 'List', href: '/', title: 'List' }]}/>
 
-
-            <main role="main">
+            <div class="container">
                 App
-                <br/>
-                {x}
-            </main>
+            </div>
+
+            <SiteFooter/>
         </div>
     );
 };

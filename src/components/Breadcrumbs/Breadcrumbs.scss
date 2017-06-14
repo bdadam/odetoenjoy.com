@@ -1,17 +1,16 @@
 .breadcrumbs {
-    padding: 4px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.breadcrumbs__link {
-    position: relative;
-    display: inline-block;
+.breadcrumbs__list {
+  list-style: none;
+  padding: 0;
+}
 
-    &:not(:last-child):after {
-        content: '>';
-        position: relative;
-        display: inline-block;
-        padding: 0 12px;
-    }
+.breadcrumbs__item {
+  display: inline-block;
+  font-size: 0.875rem;
+}
+
+.breadcrumbs__separator {
+  margin: 0 8px;
 }

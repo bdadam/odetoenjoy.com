@@ -12,7 +12,7 @@ const app = express();
 
 app.disable('x-powered-by');
 
-const Html = ({ head, scriptUrl, cssUrl, app }) => {
+const Html = ({ head, scriptUrl, cssUrl, children }) => {
     const htmlAttributes = head.htmlAttributes.toComponent();
 
     return (
@@ -26,21 +26,21 @@ const Html = ({ head, scriptUrl, cssUrl, app }) => {
                 <link rel="stylesheet" href={cssUrl} />
             </head>
             <body>
-                <div id="app" dangerouslySetInnerHTML={{ __html : app }}></div>
+                <div id="app">{children}</div>
                 <script src={scriptUrl} defer></script>
             </body>
         </html>
     );
 };
 
-app.use('/static', express.static(path.resolve(process.cwd(), 'dist'), { maxAge: '30 days', index: false, etag: false }));
+// app.use('/static', express.static(path.resolve(process.cwd(), 'dist'), { maxAge: '30 days', index: false, etag: false }));
+app.use('/static', express.static(path.resolve(process.cwd(), 'dist'), { index: false, etag: false }));
 
 app.get('/', (req, res) => {
-    const app = render(<Application x="server" />);
     const head = Helmet.rewind();
     const scriptUrl = '/static/main.js';
     const cssUrl = '/static/main.css';
-    const html = render(<Html head={head} scriptUrl={scriptUrl} cssUrl={cssUrl} app={app} />);
+    const html = render(<Html head={head} scriptUrl={scriptUrl} cssUrl={cssUrl}><Application x="server" /></Html>);
     res.send(html);
 });
 
