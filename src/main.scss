@@ -1,17 +1,7 @@
-body {
-    background-color: #f1f1f1;
-}
-
-body, html {
-    padding: 0;
-    margin: 0;
-}
-
-html {
-    box-sizing: border-box;
-    font-size: 1rem;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
-}
+@import 'styles/1_settings.scss';
+@import 'styles/2_tools.scss';
+@import 'styles/3_generic.scss';
+@import 'styles/4_elements.scss';
+@import 'styles/5_objects.scss';
+@import 'styles/6_componentss.scss';
+@import 'styles/7_utilities.scss';

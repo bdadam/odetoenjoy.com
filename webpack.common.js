@@ -9,7 +9,7 @@ const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 const extractScss = new ExtractTextPlugin('[name].css');
 
-const sassImport = require('node-sass-import');
+const sassImport = require('sass-module-importer')();
 
 module.exports = {
     watch: false,
