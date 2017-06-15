@@ -11,7 +11,8 @@ module.exports = {
         "jest/globals": true
     },
     "globals": {
-        "expect": true
+        "expect": true,
+        "fetch": true
     },
     "extends": [
         "eslint:recommended",

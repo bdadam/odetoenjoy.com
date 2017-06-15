@@ -1,3 +1,7 @@
+import 'unfetch/polyfill';
+import Promiz from 'promiz';
+window.Promise = window.Promise || Promiz;
+
 import { h, render } from 'preact';
 
 import Application from './Application';

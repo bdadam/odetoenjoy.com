@@ -36,13 +36,17 @@ const Html = ({ head, scriptUrl, cssUrl, children }) => {
 // app.use('/static', express.static(path.resolve(process.cwd(), 'dist'), { maxAge: '30 days', index: false, etag: false }));
 app.use('/static', express.static(path.resolve(process.cwd(), 'dist'), { index: false, etag: false }));
 
-app.get('/', (req, res) => {
+import gqlRouter from './server-api';
+
+app.use('/gql', gqlRouter);
+
+
+app.get('*', (req, res) => {
     const head = Helmet.rewind();
     const scriptUrl = '/static/main.js';
     const cssUrl = '/static/main.css';
-    const html = render(<Html head={head} scriptUrl={scriptUrl} cssUrl={cssUrl}><Application x="server" /></Html>);
+    const html = render(<Html head={head} scriptUrl={scriptUrl} cssUrl={cssUrl}><Application url={req.url} /></Html>);
     res.send(html);
 });
-
 
 export default app;

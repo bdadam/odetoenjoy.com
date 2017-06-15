@@ -10,3 +10,51 @@
     padding-right: 0;
   }
 }
+
+.form-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.35);
+
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+
+    background-color: #fff;
+    margin-left: -20px;
+    margin-top: -20px;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+.form-row-inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    margin-right: 12px;
+    width: 100px;
+    text-align: right;
+  }
+
+  input[type=text], select, textarea {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #cdcdcd;
+    border-radius: 3px;
+    padding: 8px;
+    font-size: 1rem;
+    line-height: 1;
+  }
+}
