@@ -66,7 +66,9 @@ module.exports = {
         //     title: 'test title',
         //     filename: 'test.html'
         // }),
-        new LodashModuleReplacementPlugin(),
+        // new LodashModuleReplacementPlugin({
+        //     paths: true
+        // }),
         // new ManifestPlugin({
         //     fileName: 'asset-manifest.json',
         //     publicPath: '/assets/haendler/',
