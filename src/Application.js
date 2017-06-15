@@ -6,6 +6,7 @@ import './main.scss';
 
 import HomePage from './pages/Home';
 import UploadPage from './pages/Upload';
+import UploadDetailsPage from './pages/UploadDetails';
 
 import SiteHeader from './components/SiteHeader/SiteHeader';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
@@ -29,6 +30,7 @@ export default ({ url }) => {
             <Router url={url}>
                 <HomePage path="/" />
                 <UploadPage path="/upload" />
+                <UploadDetailsPage path="/upload/:url" />
             </Router>
             <div class="container">
                 App
