@@ -20,14 +20,9 @@ export const crawlUrl = url => {
     return fetch(queryURL)
         .then(response => response.json())
         .then(res => {
-            // this.setState({ videoEmbdedUrl: x.data.crawlUrl.videos[0].url });
-            const data = res.data.crawlUrl;
-            console.log(data);
-            // const video = data.videos && data.vis
-            // return res.data.crawlUrl;
             return {
                 title: get(res, 'data.crawlUrl.title', '(no title)'),
-                video: get(data, 'videos[0].url')
+                video: get(res, 'data.crawlUrl.videos[0].url')
             };
         });
 };

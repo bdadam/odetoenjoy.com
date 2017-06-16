@@ -35,11 +35,35 @@
   }
 }
 
+.form-row {
+  margin: 4px 0;
+
+  label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: bold;
+    padding-left: 8px;
+    margin-bottom: 3px;
+  }
+  
+  input[type=text], select, textarea {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #cdcdcd;
+    border-radius: 3px;
+    padding: 8px;
+    font-size: 1rem;
+    line-height: 1;
+  }
+}
+
 .form-row-inline {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-bottom: 12px;
 
   label {
     margin-right: 12px;
@@ -57,4 +81,10 @@
     font-size: 1rem;
     line-height: 1;
   }
+}
+
+.heading-1 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
 }
