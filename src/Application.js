@@ -25,16 +25,13 @@ export default ({ url }) => {
 
             <SiteHeader/>
 
-            <Breadcrumbs links={[{ text: 'Home', href: '/', title: 'Home' }, { text: 'List', href: '/', title: 'List' }]}/>
+            {/*<Breadcrumbs links={[{ text: 'Home', href: '/', title: 'Home' }, { text: 'List', href: '/', title: 'List' }]}/>*/}
 
             <Router url={url}>
                 <HomePage path="/" />
                 <UploadPage path="/upload" />
                 <UploadDetailsPage path="/upload/:url" />
             </Router>
-            <div class="container">
-                App
-            </div>
 
             <SiteFooter/>
         </div>
