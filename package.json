@@ -49,6 +49,7 @@
     "minireset.css": "^0.0.3",
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
+    "postcss-flexbugs-fixes": "^3.0.0",
     "postcss-loader": "^2.0.5",
     "preact": "^8.1.0",
     "preact-helmet": "^4.0.0-alpha-2",
