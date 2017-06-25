@@ -1,7 +1,7 @@
 import { get } from 'lodash';
 
 export const crawlUrl = url => {
-    const query = `
+    const query = dedent`
         query ($url: String!) {
             crawlUrl(url: $url) {
                 title
