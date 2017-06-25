@@ -23,15 +23,14 @@ const VideoUrlForm = ({ url, onVideoUrlProvided }) => {
             </div>
             <button type="submit">Next</button>
         </form>
-
     );
 };
 
 const Spinner = ({ text }) => <div class="spinner">{text}</div>;
 
-const VideoDataEditor = ({ title, description, tags, onTitleChange, onDescriptionChange, onTagsChange }) => {
+const VideoDataEditor = ({ title, description, tags, onTitleChange, onDescriptionChange, onTagsChange, onSubmit, onCancel }) => {
     return (
-        <div>
+        <form onSubmit={onSubmit}>
             <div class="form-row-inline">
                 <label>Title</label>
                 <input type="text" value={title} onInput={e => onTitleChange(e.target.value)} />
@@ -42,9 +41,12 @@ const VideoDataEditor = ({ title, description, tags, onTitleChange, onDescriptio
             </div>
             <div class="form-row-inline">
                 <label>Tags</label>
-                <input value={tags.map(t => t.trim()).join(', ')} type="text" onInput={e => onTagsChange(e.target.value)} />
+                <input value={tags} type="text" onInput={e => onTagsChange(e.target.value)} />
             </div>
-        </div>
+
+            <button onClick={onCancel}>Cancel</button>
+            <button type="submit">Submit video</button>
+        </form>
     );
 };
 
@@ -82,8 +84,9 @@ export default class extends Component {
     render(props, state) {
         return (
             <div class="container">
-
-                <h1 class="heading-1">Upload video from URL</h1>
+                <div class="row">
+                    <h1 class="heading-1">Upload video from URL</h1>
+                </div>
 
                 { !state.videoEmbedUrl && <VideoUrlForm url={state.url} onVideoUrlProvided={this.onVideoUrlProvided.bind(this)} /> }
 
@@ -98,11 +101,10 @@ export default class extends Component {
                         <VideoDataEditor embedUrl={state.videoEmbedUrl} title={state.title} description={state.description} tags={state.tags}
                             onTitleChange={t => this.set('title', t)}
                             onDescriptionChange={d => this.set('description', d)}
-                            onTagsChange={t => this.setState({ tags: t.split(',') })} />
+                            onTagsChange={t => this.setState({ tags: t })}
+                            onSubmit={e => { e.preventDefault(); console.log('Submit', state); }}
+                            onCancel={e => { e.preventDefault(); this.setState({ videoEmbedUrl: '' }); }} />
         
-                        <button onClick={() => { this.setState({ videoEmbedUrl : '' }); }}>Back</button>
-                        <button>Submit video</button>
-
                         {/*{ state.videoEmbedUrl && state.title <Upload title={state.title} description={state.description} url={state.url} videoUrl={state.videoEmbedUrl} /> }*/}
                     </div>
                 }
