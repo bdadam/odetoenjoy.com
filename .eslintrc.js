@@ -12,7 +12,8 @@ module.exports = {
     },
     "globals": {
         "expect": true,
-        "fetch": true
+        "fetch": true,
+        "dedent": true
     },
     "extends": [
         "eslint:recommended",

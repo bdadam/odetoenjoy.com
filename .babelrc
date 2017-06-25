@@ -8,7 +8,8 @@
         ],
         [
             "lodash"
-        ]
+        ],
+        "dedent"
         // ["resolver", { "resolveDirs": ["src"] }]
     ],
     "presets": [
