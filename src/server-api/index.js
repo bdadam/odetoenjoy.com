@@ -80,9 +80,9 @@ const schema = buildSchema(`
     }
 `);
 
-import { createPreviewFromUrl } from '../services/image-service';
+// import { createPreviewFromUrl } from '../services/image-service';
 
-createPreviewFromUrl('https://i.ytimg.com/vi/fW8amMCVAJQ/hqdefault.jpg').then(x => console.log(x));
+// createPreviewFromUrl('https://i.ytimg.com/vi/fW8amMCVAJQ/hqdefault.jpg').then(x => console.log(x));
 
 // import Video from '../models/video-model';
 
@@ -97,26 +97,11 @@ createPreviewFromUrl('https://i.ytimg.com/vi/fW8amMCVAJQ/hqdefault.jpg').then(x 
 //     console.log(vids);
 // });
 
+import VideoPostService from '../services/video-post-service';
+
 const root = {
     crawlUrl: (args, ctx) => {
-        const crawl = require('metatag-crawler');
-
-        return new Promise((resolve, reject) => {
-            crawl(args.url, (err, data) => {
-                if (err) {
-                    return reject(err);
-                }
-
-                resolve({
-                    title: data.og.title || data.meta.title,
-                    canonicalUrl: data.meta.canonical || data.og.url,
-                    url: args.url,
-                    videos: data.og.videos,
-                    images: data.og.images
-                    // videos: data.og.videos.filter(v => v.type === 'text/html' || !v.type)
-                });
-            });
-        });    
+        return VideoPostService.fetchMetaData(args.url);
     },
     addVideo: (args, ctx) => {
         console.log(args);
