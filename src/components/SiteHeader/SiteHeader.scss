@@ -1,13 +1,17 @@
 .site-header {
-  background-color: #fff;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-  border-bottom: solid 1px #dcdcdc;
-  margin-bottom: 16px;
+  // background-color: #fff;
+  // box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+  // border-bottom: solid 1px #dcdcdc;
+  // margin-bottom: 16px;
+  // border-bottom: 1px solid #865;
+  background-color: #2A1332;
 }
 
 .site-header__link {
-  padding: 12px 0;
+  padding: 20px 0;
   margin-right: 24px;
   display: inline-block;
-  font-size: 1.125rem;
+  // font-size: 1.125rem;
+
+  color: #eee;
 }
