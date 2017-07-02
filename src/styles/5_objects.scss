@@ -119,7 +119,7 @@
   flex-wrap: wrap;
 }
 
-[class^="col-sm-"], [class^="col-md-"], [class^="col-lg-"] {
+[class^="col-xs-"], [class^="col-sm-"], [class^="col-md-"], [class^="col-lg-"] {
   margin-left: 12px;
   margin-right: 12px;  
   display: block;
@@ -128,18 +128,29 @@
 
 @for $i from 1 through 12 {
   .col-#{$i} {
-    width: calc(#{$i} / 12 * 100%);
-  } 
+    width: calc(#{$i} / 12 * 100% - 24px);
+  }
+}
 
-  .col-sm-#{$i} {
-    width: calc(#{$i} / 12 * 100%);
-  } 
+@for $i from 1 through 12 {
+  .col-xs-#{$i} {
+    width: calc(#{$i} / 12 * 100% - 24px);
+  }
+}
+
+
+@media all and (min-width: 480px) {
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      width: calc(#{$i} / 12 * 100% - 24px);
+    }
+  }
 }
 
 @media all and (min-width: 768px) {
   @for $i from 1 through 12 {
     .col-md-#{$i} {
-      width: calc(#{$i} / 12 * 100%);
+      width: calc(#{$i} / 12 * 100% - 24px);
     }
   }
 }
@@ -147,7 +158,7 @@
 @media all and (min-width: 1024px) {
   @for $i from 1 through 12 {
     .col-lg-#{$i} {
-      width: calc(#{$i} / 12 * 100%);
+      width: calc(#{$i} / 12 * 100% - 24px);
     }
   }
 }
