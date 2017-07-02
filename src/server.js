@@ -37,6 +37,20 @@ const Html = ({ head, scriptUrl, cssUrl, children }) => {
 app.use('/static', express.static(path.resolve(process.cwd(), 'dist'), { index: false, etag: false }));
 app.use('/images', express.static(path.resolve(process.cwd(), 'static/images'), { index: false, etag: false }));
 
+import Image from './models/image-model';
+
+app.get('/img/count', (req, res) => {
+    Image.count().then(c => {
+        res.send(c);
+    });
+});
+
+app.get('/img/:id', (req, res) => {
+    Image.findById(req.params.id).then(img => {
+        res.type('jpg').send(img.image);
+    });
+});
+
 import gqlRouter from './server-api';
 
 app.use('/gql', gqlRouter);

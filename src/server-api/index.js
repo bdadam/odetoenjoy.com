@@ -80,6 +80,10 @@ const schema = buildSchema(`
     }
 `);
 
+import { createPreviewFromUrl } from '../services/image-service';
+
+createPreviewFromUrl('https://i.ytimg.com/vi/fW8amMCVAJQ/hqdefault.jpg').then(x => console.log(x));
+
 // import Video from '../models/video-model';
 
 // Video.create({
