@@ -80,6 +80,19 @@ const schema = buildSchema(`
     }
 `);
 
+// import Video from '../models/video-model';
+
+// Video.create({
+//     title: 'TEST',
+//     description: 'sdfsfsdf'
+// }).then(v => {
+//     console.log(v);
+// });
+
+// Video.all().then(vids => {
+//     console.log(vids);
+// });
+
 const root = {
     crawlUrl: (args, ctx) => {
         const crawl = require('metatag-crawler');
