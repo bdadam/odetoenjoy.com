@@ -6,9 +6,56 @@ const { buildSchema, graphql } = require('graphql');
 const router = express.Router();
 
 const schema = buildSchema(`
+    schema {
+        query: Query,
+        mutation: Mutation
+    }
+
     type Query {
-        text: String,
         crawlUrl(url: String!): CrawlResult
+        # findPage
+    }
+
+    type Mutation {
+        addVideo(videoInput: VideoInput!): VideoPageSummary
+    }
+
+    type VideoPage {
+        id: ID!
+        slug: String!
+        title: String!
+        description: String
+        tags: [String]
+        videos: [Video]
+    }
+
+    type Video {
+        previewImage: Image
+        embedUrl: String!
+        duration: Int
+    }
+
+    type Image {
+        id: ID
+    }
+
+    type PageMetaData {
+        title: String!
+        description: String
+        canonicalUrl: String!
+    }
+
+    input VideoInput {
+        url: String!
+        title: String!
+        description: String
+        tags: [String]
+    }
+
+    type VideoPageSummary {
+        id: String!
+        url: String!
+        title: String!
     }
 
     type CrawlResult {
@@ -34,7 +81,6 @@ const schema = buildSchema(`
 `);
 
 const root = {
-    text: (args, ctx) => console.log(ctx) || 'TEST Text',
     crawlUrl: (args, ctx) => {
         const crawl = require('metatag-crawler');
 
@@ -54,6 +100,17 @@ const root = {
                 });
             });
         });    
+    },
+    addVideo: (args, ctx) => {
+        console.log(args);
+
+        return new Promise((resolve, reject) => {
+            resolve({
+                id: args.id || '123',
+                url: args.videoInput.url || 'sdfdsf',
+                title: args.videoInput.title || 'sfdsdfsd'
+            });
+        });
     }
 };
 
