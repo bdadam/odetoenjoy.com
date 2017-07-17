@@ -1,9 +1,9 @@
-const express = require('express');
+import { Router } from 'express';
 
 const graphqlHTTP = require('express-graphql');
 const { buildSchema, graphql } = require('graphql');
 
-const router = express.Router();
+const router = Router();
 
 const schema = buildSchema(`
     schema {
@@ -17,7 +17,23 @@ const schema = buildSchema(`
     }
 
     type Mutation {
-        addVideo(videoInput: VideoInput!): VideoPageSummary
+        createVideo(videoInput: VideoInput!): Video
+
+        suggestVideo(input: VideoSuggestion!): VideoSuggestionResult
+        
+    }
+
+    input VideoSuggestion {
+        url: String!
+        title: String!
+        description: String
+        tags: [String]
+        
+    }
+
+    type VideoSuggestionResult {
+        accepted: Boolean!
+        url: String
     }
 
     type VideoPage {
@@ -96,6 +112,8 @@ const schema = buildSchema(`
 // Video.all().then(vids => {
 //     console.log(vids);
 // });
+
+// Promise.race([fetch('...'), new Promise(resolve => setTimeout(resolve, 2000))]).then(...);
 
 import VideoPostService from '../services/video-post-service';
 
