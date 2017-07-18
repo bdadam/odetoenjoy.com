@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:client": "webpack",
+    "build:server": "cross-env BABEL_ENV=node babel src -d dist-server",
+    "start": "nodemon -q index-prod.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +35,7 @@
     "browser-sync": "^2.18.12",
     "classnames": "^2.2.5",
     "cookie-parser": "^1.4.3",
+    "cross-env": "^5.0.1",
     "css-loader": "^0.28.4",
     "express": "^4.15.3",
     "express-graphql": "^0.6.6",
@@ -65,6 +69,7 @@
     "sass-loader": "^6.0.5",
     "sass-module-importer": "^1.4.0",
     "sequelize": "^4.2.1",
+    "source-map-support": "^0.4.15",
     "sqlite3": "^3.1.8",
     "style-loader": "^0.18.2",
     "unfetch": "^3.0.0",
@@ -73,6 +78,7 @@
     "webpack-dev-middleware": "^1.10.2",
     "webpack-manifest": "^1.0.8",
     "webpack-merge": "^4.1.0",
+    "webpack-node-externals": "^1.6.0",
     "webpack-stream": "^3.2.0"
   },
   "devDependencies": {

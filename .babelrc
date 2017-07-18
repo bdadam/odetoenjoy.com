@@ -1,39 +1,36 @@
 {
-    "plugins": [
-        [
-            "transform-react-jsx",
-            {
-                "pragma": "h"
-            }
-        ],
-        [
-            "lodash"
-        ],
-        "dedent"
-        // ["resolver", { "resolveDirs": ["src"] }]
-    ],
+    // "plugins": [
+    //     [
+    //         "transform-react-jsx",
+    //         {
+    //             "pragma": "h"
+    //         }
+    //     ],
+    //     "lodash",
+    //     "dedent"
+    // ],
     "presets": [
-        [
-            "env",
-            {
-                "targets": {
-                    "node": true,
-                    "browsers": [
-                        "last 2 Chrome versions",
-                        "last 2 Firefox versions",
-                        "last 2 FirefoxAndroid versions",
-                        "last 2 Safari versions",
-                        "last 2 Edge versions",
-                        "last 2 iOS versions",
-                        "ie >= 11",
-                        "Android >= 5"
-                    ]
-                },
-                "useBuiltIns": true,
-                "loose": true
-            }
-        ],
-        "react"
+        // [
+        //     "env",
+        //     {
+        //         "targets": {
+        //             "node": true,
+        //             "browsers": [
+        //                 "last 2 Chrome versions",
+        //                 "last 2 Firefox versions",
+        //                 "last 2 FirefoxAndroid versions",
+        //                 "last 2 Safari versions",
+        //                 "last 2 Edge versions",
+        //                 "last 2 iOS versions",
+        //                 "ie >= 11",
+        //                 "Android >= 5"
+        //             ]
+        //         },
+        //         "useBuiltIns": true,
+        //         "loose": true
+        //     }
+        // ],
+        // "react"
     ],
     "sourceMaps": "inline",
     "retainLines": true,
@@ -44,19 +41,45 @@
             ]
         },
         "node": {
+            "presets": [
+                ["env", { "targets": { "node": true }, "useBuiltIns": true, "loose": true }]
+            ],
             "plugins": [
                 "transform-es2015-modules-commonjs",
+                ["transform-react-jsx", { "pragma": "h", "useBuiltIns": true }],
+                ["babel-plugin-transform-require-ignore", { "extensions": [".scss", ".sass", ".css"] }]
+            ]
+        },
+        "browser": {
+            "presets": [
                 [
-                    "babel-plugin-transform-require-ignore",
+                    "env",
                     {
-                        "extensions": [
-                            ".scss",
-                            ".sass",
-                            ".css"
-                        ]
+                        "targets": {
+                            "node": true,
+                            "browsers": [
+                                "last 2 Chrome versions",
+                                "last 2 Firefox versions",
+                                "last 2 FirefoxAndroid versions",
+                                "last 2 Safari versions",
+                                "last 2 Edge versions",
+                                "last 2 iOS versions",
+                                "ie >= 11",
+                                "Android >= 5"
+                            ]
+                        },
+                        "useBuiltIns": true,
+                        "loose": true
                     }
                 ]
-            ]
+            ],
+            "plugins": [
+                "transform-es2015-modules-commonjs",                
+                ["transform-react-jsx", { "pragma": "h", "useBuiltIns": true }],
+                // ["babel-plugin-transform-require-ignore", { "extensions": [".scss", ".sass", ".css"] }],
+                "lodash",
+                "dedent"
+            ]            
         }
     }
 }
