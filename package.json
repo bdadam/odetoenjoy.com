@@ -60,7 +60,6 @@
     "postcss-flexbugs-fixes": "^3.0.0",
     "postcss-loader": "^2.0.5",
     "preact": "^8.1.0",
-    "preact-helmet": "^4.0.0-alpha-2",
     "preact-redux": "^2.0.1",
     "preact-render-to-string": "^3.6.3",
     "preact-router": "^2.5.2",
