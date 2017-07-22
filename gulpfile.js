@@ -12,24 +12,31 @@ gulp.task('dev-mode', () => {
     config.watch = true;
 });
 
-gulp.task('webpack', () => {
+gulp.task('webpack', (done) => {
     const webpack = require('webpack');
-    const clientCfg = require('./webpack.client');
-    const serverCfg = require('./webpack.server');
+    const serverCfg = Object.assign({}, require('./webpack.server'), { watch: config.watch });
+    const clientCfg = Object.assign({}, require('./webpack.client'), { watch: config.watch });
 
     const writeStats = (err, stats) => {
+
+        // if (err || stats.hasErrors()) {
+        //     // Handle errors here
+        //     console.error(err);
+        // }
+
         console.log(stats.toString({
             colors: true,
             modules: false,
             hash: false,
             version: false
         }));
+
+        if (!config.watch) {
+            done();
+        }
     };
-
-    const compile = compiler => compiler.run(writeStats);
-    const watch = compiler => compiler.watch({}, writeStats);
-
-    webpack([clientCfg, serverCfg]).compilers.forEach(config.watch ? watch : compile);
+    
+    webpack([serverCfg, clientCfg], writeStats);
 });
 
 gulp.task('nodemon', () => {
