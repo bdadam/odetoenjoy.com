@@ -32,8 +32,8 @@
         // ],
         // "react"
     ],
-    "sourceMaps": "inline",
-    "retainLines": true,
+    // "sourceMaps": "inline",
+    // "retainLines": true,
     "env": {
         "test": {
             "plugins": [
@@ -51,6 +51,8 @@
             ]
         },
         "browser": {
+            // "sourceMaps": "inline",
+            // "retainLines": true,        
             "presets": [
                 [
                     "env",

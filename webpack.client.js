@@ -10,7 +10,8 @@ module.exports = {
     target: 'web',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js'
+        filename: '[name].js',
+        publicPath: '/static/'
     },
     cache: true,
     devtool: 'source-map',
@@ -59,25 +60,25 @@ module.exports = {
     },
     plugins: [
         extractScss,
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: `${process.env.NODE_ENV || '"production"'}`
+            }
+        }),
         // new webpack.LoaderOptionsPlugin({
         //     minimize: true,
         //     debug: false
         // }),
-        // new webpack.DefinePlugin({
-        //     'process.env': {
-        //         'NODE_ENV': JSON.stringify('production')
-        //     }
-        // }),
         // new webpack.optimize.UglifyJsPlugin({
-        //     beautify: false,
         //     sourceMap: true,
+        //     beautify: false,
         //     mangle: {
         //         screw_ie8: true,
         //     },
         //     compress: {
-        //         screw_ie8: true
-        //     },
-        //     warningsFilter: () => { }
+        //         screw_ie8: true,
+        //         warnings: false
+        //     }
         // })
     ]
 };

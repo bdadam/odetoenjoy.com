@@ -31,4 +31,10 @@ app.use('*', applicationRouter);
 
 app.listen(process.env.PORT || 3000);
 
+// var livereload = require('livereload');
+// var lrserver = livereload.createServer();
+// import path from 'path';
+// // lrserver.watch([path.resolve('dist2'), path.resolve('dist')]);
+// lrserver.watch([path.resolve('dist')]);
+
 // export default app;
