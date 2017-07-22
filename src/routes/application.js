@@ -22,6 +22,7 @@ const Html = ({ head, scriptUrl, cssUrl, children }) => {
             <body>
                 <div id="app">{children}</div>
                 <script src={scriptUrl} defer></script>
+                <script src="http://localhost:35729/livereload.js?snipver=1" async></script>
             </body>
         </html>
     );
