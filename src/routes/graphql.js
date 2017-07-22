@@ -13,7 +13,12 @@ const schema = buildSchema(`
 
     type Query {
         crawlUrl(url: String!): CrawlResult
+        test(id: String): Test!
         # findPage
+    }
+
+    type Test {
+        test: String
     }
 
     type Mutation {
@@ -120,6 +125,9 @@ import VideoPostService from '../services/video-post-service';
 const root = {
     crawlUrl: (args, ctx) => {
         return VideoPostService.fetchMetaData(args.url);
+    },
+    test: (args) => {
+        return { test: `TEST: ${args.id}` };
     },
     addVideo: (args, ctx) => {
         console.log(args);

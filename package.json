@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "build:client": "webpack",
     "build:server": "cross-env BABEL_ENV=node babel src -d dist-server",
     "start": "nodemon -q index-prod.js"
@@ -48,6 +49,7 @@
     "gulp-nodemon": "^2.2.1",
     "html-webpack-plugin": "^2.28.0",
     "ignore-styles": "^5.0.1",
+    "jest": "^20.0.4",
     "jest-serializer-html-string": "^1.0.1",
     "jimp": "^0.2.28",
     "livereload": "^0.6.2",
@@ -74,6 +76,7 @@
     "source-map-support": "^0.4.15",
     "sqlite3": "^3.1.8",
     "style-loader": "^0.18.2",
+    "supertest": "^3.0.0",
     "unfetch": "^3.0.0",
     "uuid": "^3.1.0",
     "webpack": "^3.3.0",

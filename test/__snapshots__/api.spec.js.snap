@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Blubb 1`] = `
+Object {
+  "data": Object {
+    "test": Object {
+      "test": "TEST: 5",
+    },
+  },
+}
+`;
