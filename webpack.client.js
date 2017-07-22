@@ -2,8 +2,28 @@ const path = require('path');
 
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extractScss = new ExtractTextPlugin('[name].css');
 const sassImport = require('sass-module-importer')();
+
+const extractScssPlugin = new ExtractTextPlugin('[name].css');
+const definePlugin = new webpack.DefinePlugin({
+    'process.env': {
+        NODE_ENV: `${process.env.NODE_ENV || '"production"'}`
+    }
+});
+const uglifyPlugin = new webpack.optimize.UglifyJsPlugin({
+    sourceMap: true,
+    beautify: false,
+    mangle: {
+        screw_ie8: true,
+    },
+    compress: {
+        screw_ie8: true,
+        warnings: false
+    }
+});
+
+const insertIf = (condition, ...elements) => condition ? elements : [];
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
     name: 'client',
@@ -30,7 +50,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: extractScss.extract({
+                use: extractScssPlugin.extract({
                     use: [{
                         loader: 'css-loader',
                         options: {
@@ -57,26 +77,8 @@ module.exports = {
         ]
     },
     plugins: [
-        extractScss,
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: `${process.env.NODE_ENV || '"production"'}`
-            }
-        }),
-        // new webpack.LoaderOptionsPlugin({
-        //     minimize: true,
-        //     debug: false
-        // }),
-        // new webpack.optimize.UglifyJsPlugin({
-        //     sourceMap: true,
-        //     beautify: false,
-        //     mangle: {
-        //         screw_ie8: true,
-        //     },
-        //     compress: {
-        //         screw_ie8: true,
-        //         warnings: false
-        //     }
-        // })
+        extractScssPlugin,
+        definePlugin,
+        ...insertIf(isProduction, uglifyPlugin)
     ]
 };
