@@ -55,7 +55,7 @@ module.exports = {
             "error",
             "always"
         ],
-        "compat/compat": 2,
+        // "compat/compat": 2,
 
         "react/jsx-no-duplicate-props": 2,
         "react/prefer-es6-class": 2,

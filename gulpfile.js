@@ -46,5 +46,24 @@ gulp.task('livereload', () => {
     livereload.watch([path.resolve('dist')]);
 });
 
+gulp.task('eslint', () => {
+    const eslint = require('gulp-eslint');
+    return gulp.src(['./src/**/*.js','!node_modules/**'])
+        .pipe(eslint())
+        .pipe(eslint.format());
+});
+
+gulp.task('eslint:fix', () => {
+    const eslint = require('gulp-eslint');
+    const gulpIf = require('gulp-if');
+
+    const isFixed = file => file.eslint != null && file.eslint.fixed;
+
+    return gulp.src('./src/**/*.js')
+        .pipe(eslint({ fix: true }))
+        .pipe(eslint.format())
+        .pipe(gulpIf(isFixed, gulp.dest('./src')));
+});
+
 gulp.task('build', ['webpack']);
 gulp.task('dev', ['dev-mode', 'build', 'nodemon', 'livereload']);

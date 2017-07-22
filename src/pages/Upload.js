@@ -4,7 +4,7 @@ import { crawlUrl } from '../client-api/upload';
 
 import VideoPlayer from '../components/VideoPlayer/VideoPlayer';
 
-import { route } from 'preact-router';
+// import { route } from 'preact-router';
 
 // const upload = e => {
 //     e.preventDefault();
@@ -15,7 +15,7 @@ import { route } from 'preact-router';
 const VideoUrlForm = ({ url, onVideoUrlProvided }) => {
     return (
         <form onSubmit={e => { e.preventDefault(); onVideoUrlProvided(e.target.url.value); }}>
-        {/* <form onSubmit={e => { e.preventDefault(); route(`/upload/${encodeURIComponent(e.target.url.value)}`); }}>*/}
+            {/* <form onSubmit={e => { e.preventDefault(); route(`/upload/${encodeURIComponent(e.target.url.value)}`); }}>*/}
             <p>Type or paste a video URL, e.g. https://youtube.com/watch?v=abcdabcd123</p>
             <div class="form-row">
                 {/*<label for="upload-url-input">Url</label>*/}
