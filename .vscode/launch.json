@@ -9,12 +9,13 @@
             "request": "attach",
             "name": "Attach",
             "protocol": "inspector",
+            "restart": true,            
             "outFiles": [
                 "${workspaceRoot}/dist/**/*.js"
             ],
             "sourceMaps": true,
-            "port": 9229
-            // "smartStep": true
+            "port": 9229,
+            "smartStep": true
         },
         {
             "type": "node",
