@@ -9,3 +9,15 @@ Object {
   },
 }
 `;
+
+exports[`Test FetchMetaData 1`] = `
+Object {
+  "data": Object {
+    "crawlUrl": Object {
+      "canonicalUrl": "canonical-fine-url",
+      "title": "Some og title",
+      "videos": null,
+    },
+  },
+}
+`;

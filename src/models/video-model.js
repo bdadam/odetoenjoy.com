@@ -1,8 +1,8 @@
 import { merge, pick } from 'lodash';
-import Datastore from 'nedb';
 import uuid from 'uuid/v1';
+import db from '../databases/videodb';
 
-const db = new Datastore({ filename: 'data/test.nedb', autoload: true });
+console.log(db.inMemoryOnly);
 
 export const create = (data) => new Promise((resolve, reject) => {
     const obj = merge(pick(data, ['title', 'description']), { _id: uuid(), createdAd: Date.now() });
