@@ -1,6 +1,8 @@
 {
     "env": {
         "test": {
+            "sourceMaps": "inline",
+            // "sourceMaps": true,
             "plugins": [
                 "transform-es2015-modules-commonjs",
                 ["transform-react-jsx", { "pragma": "h", "useBuiltIns": true }],
@@ -8,6 +10,7 @@
             ]
         },
         "node": {
+            "sourceMaps": "inline",
             "presets": [
                 ["env", { "targets": { "node": true }, "useBuiltIns": true, "loose": true }]
             ],
