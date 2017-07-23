@@ -10,7 +10,6 @@
             ]
         },
         "node": {
-            "sourceMaps": "inline",
             "presets": [
                 ["env", { "targets": { "node": true }, "useBuiltIns": true, "loose": true }]
             ],

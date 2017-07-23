@@ -41,10 +41,7 @@ gulp.task('webpack', (done) => {
 
 gulp.task('nodemon', () => {
     const nodemon = require('nodemon');
-    nodemon({
-        script: 'dist/server.webpacked.js',
-        watch: ['dist/**/*.js']
-    });
+    nodemon('--inspect --watch dist --ignore dist/main.js dist/server.webpacked.js');
 });
 
 gulp.task('livereload', () => {

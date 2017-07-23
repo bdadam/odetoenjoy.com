@@ -6,11 +6,13 @@ module.exports = {
     target: 'node',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'server.webpacked.js'
+        filename: 'server.webpacked.js',
+        // devtoolModuleFilenameTemplate: '[absolute-resource-path]'
+        devtoolModuleFilenameTemplate: '../[resource-path]'
     },
     cache: true,
     devtool: 'source-map',
-    entry: './src/server.js',
+    entry: path.resolve('./src', 'server.js'),
     externals: [
         nodeExternals()
     ],
