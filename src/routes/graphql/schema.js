@@ -7,6 +7,8 @@ schema {
 }
 
 type Query {
+    healthcheck: String
+
     crawlUrl(url: String!): CrawlResult
     test(id: String): Test!
     # findPage

@@ -1,6 +1,9 @@
 import VideoPostService from '../../services/video-post-service';
 
 const root = {
+    healthcheck: () => {
+        return 'OK';
+    },
     crawlUrl: (args, ctx) => {
         return VideoPostService.fetchMetaData(args.url);
     },
