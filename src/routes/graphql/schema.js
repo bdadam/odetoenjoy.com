@@ -1,4 +1,4 @@
-const { buildSchema } = require('graphql');
+import { buildSchema } from 'graphql';
 
 export default buildSchema(`
 schema {
@@ -10,27 +10,50 @@ type Query {
     healthcheck: String
 
     crawlUrl(url: String!): CrawlResult
-    test(id: String): Test!
     # findPage
+
+    test1(x: Int): Test1
 }
 
-type Test {
-    test: String
+type Test1 {
+    test2(y: Int): Test2
+}
+
+type Test2 {
+    test3: String
+}
+
+type Video2 {
+    id: ID!
+    title: String
+
+
+    # resolution: Resolution
+    # url: String
+    # embed: String
+}
+
+type MediaUrls {
+    canonical: String
+    embed: String
+}
+
+type Resolution {
+    width: Int
+    height: Int
 }
 
 type Mutation {
     createVideo(videoInput: VideoInput!): Video
 
-    suggestVideo(input: VideoSuggestion!): VideoSuggestionResult
-    
+    suggestVideo(input: VideoSuggestionInput!): VideoSuggestionResult!
 }
 
-input VideoSuggestion {
+input VideoSuggestionInput {
     url: String!
-    title: String!
+    title: String
     description: String
-    tags: [String]
-    
+    tags: [String]    
 }
 
 type VideoSuggestionResult {

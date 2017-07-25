@@ -22,4 +22,11 @@ describe('GraphQL endpoint healthcheck', () => {
             expect(result).toEqual({ data: { healthcheck: 'OK' } });
         });
     });
+
+    // it('Test', () => {
+    //     return graphql(schema, 'query { test1(x: 12) { test2(y: 24) { test3 } } }', root).then(result => {
+    //         // console.log(JSON.stringify(result));
+    //         expect(result).toEqual({ data: { test1: { test2: { test3: 'test3: 288' } } } });
+    //     });
+    // });
 });
