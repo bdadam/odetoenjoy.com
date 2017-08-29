@@ -10,17 +10,6 @@ type Query {
     healthcheck: String
 
     crawlUrl(url: String!): CrawlResult
-    # findPage
-
-    test1(x: Int): Test1
-}
-
-type Test1 {
-    test2(y: Int): Test2
-}
-
-type Test2 {
-    test3: String
 }
 
 type Video2 {

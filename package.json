@@ -23,6 +23,10 @@
   },
   "homepage": "https://github.com/bdadam/odetoenjoy.com#readme",
   "dependencies": {
+    "@google-cloud/datastore": "^1.0.7",
+    "@google-cloud/logging": "^1.0.4",
+    "@google-cloud/pubsub": "^0.13.2",
+    "@google-cloud/storage": "^1.2.1",
     "autoprefixer": "^7.1.1",
     "babel-cli": "^6.24.1",
     "babel-jest": "^20.0.3",
@@ -90,8 +94,8 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "eslint": "^4.2.0",
-    "eslint-plugin-compat": "^1.0.3",
+    "eslint": "^4.3.0",
+    "eslint-plugin-compat": "^1.0.4",
     "eslint-plugin-jest": "^20.0.1",
     "eslint-plugin-jsx": "^0.0.2",
     "eslint-plugin-react": "^7.0.1",

@@ -1,11 +1,11 @@
 import { merge, pick } from 'lodash';
 import uuid from 'uuid/v1';
-import db from '../databases/videodb';
+import db from '../databases/videosdb';
 
 console.log(db.inMemoryOnly);
 
 export const create = (data) => new Promise((resolve, reject) => {
-    const obj = merge(pick(data, ['title', 'description']), { _id: uuid(), createdAd: Date.now() });
+    const obj = merge(pick(data, ['title', 'description']), { _id: uuid(), createdAt: Date.now() });
     db.insert(obj, (err, doc) => {
         if (err) { return reject(err); }
         resolve(doc);

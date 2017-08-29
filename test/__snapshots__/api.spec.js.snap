@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Blubb 1`] = `
-Object {
-  "data": Object {
-    "test": Object {
-      "test": "TEST: 5",
-    },
-  },
-}
-`;
-
 exports[`Test FetchMetaData 1`] = `
 Object {
   "data": Object {
@@ -17,6 +7,17 @@ Object {
       "canonicalUrl": "canonical-fine-url",
       "title": "Some og title",
       "videos": null,
+    },
+  },
+}
+`;
+
+exports[`Video Suggestions Happy case 1`] = `
+Object {
+  "data": Object {
+    "suggestVideo": Object {
+      "accepted": true,
+      "url": "blah",
     },
   },
 }

@@ -14,6 +14,12 @@ router.use('/', graphqlHTTP({
     schema: schema,
     rootValue: root,
     graphiql: true,
+    formatError: error => ({
+        message: error.message,
+        locations: error.locations,
+        stack: error.stack,
+        path: error.path
+    })
 }));
 
 export default router;

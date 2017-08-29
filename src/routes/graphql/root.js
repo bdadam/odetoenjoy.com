@@ -7,9 +7,6 @@ const root = {
     crawlUrl: (args, ctx) => {
         return VideoPostService.fetchMetaData(args.url);
     },
-    test: (args) => {
-        return { test: `TEST: ${args.id}` };
-    },
     addVideo: (args, ctx) => {
         console.log(args);
 
@@ -24,64 +21,7 @@ const root = {
     suggestVideo: (args) => {
         // console.log(args);
         return Promise.resolve({ accepted: true, url: 'blah' });
-    },
-
-    // test1: ({ x }) => {
-    //     class Test3 {
-    //         constructor() {
-    //             return 'asqweqw';
-    //         }
-
-    //         test3() {
-    //             return 'asdad';
-    //         }
-    //     }
-        
-    //     class Test2 {
-    //         constructor() {}
-
-    //         test2({ y }) {
-    //             return new Test3();
-    //             return `abc ${y}`;
-    //         }
-    //     }
-
-    //     return new Test2(x);
-    // }
-
-    test1: ({ x }) => {
-        
-        return { 
-            test2({ y }) {
-                return {
-                    test3() {
-                        return `test3: ${x * y}`;
-                    }
-                };
-            }
-        };
     }
-
-    // test1: class Test1 {
-    //     constructor({ x}) {
-    //         console.log(x);
-    //     }
-
-    //     test2({ y }) {
-    //         console.log(y);
-    //     }
-    // }
-    // test1: ({ x }, b, c) => {
-    //     console.log(b, c);
-    //     return { test2: 1234 };
-    // },
-    // Test2: (args) => {
-    //     console.log('Test2', args);
-    // },
-    // test2: ({ y }) => {
-    //     console.log(y);
-    //     return { test3: 'test3' };
-    // }
 };
 
 // import { createPreviewFromUrl } from '../services/image-service';
