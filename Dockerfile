@@ -18,4 +18,5 @@ COPY . /app
 RUN npx webpack --no-colors
 # RUN npx jest --ci --color=false+
 
-CMD [ "node", "dist/server.webpacked.js" ]
+# CMD [ "node", "dist/server.webpacked.js" ]
+CMD ["node", "test-index.js"]
