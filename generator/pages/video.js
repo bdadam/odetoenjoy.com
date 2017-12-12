@@ -49,7 +49,7 @@ module.exports = (video) => `<!DOCTYPE html>
                     <svg class="icon"><use xlink:href="#icon-facebook"></use></svg>
                     Facebook
                 </a>
-                <a class="share-button share-button--twitter" title="Share on Twitter" target="_blank" rel="external noopener" href="http://twitter.com/share?url=${encodeURIComponent(video.meta.canonical)}&text=${video.title}&via=USERNAME">
+                <a class="share-button share-button--twitter" title="Share on Twitter" target="_blank" rel="external noopener" href="http://twitter.com/share?url=${encodeURIComponent(video.meta.canonical)}&text=${video.title}">
                     <svg class="icon"><use xlink:href="#icon-twitter"></use></svg>
                     Twitter
                 </a>
