@@ -46,21 +46,26 @@
 }
 
 .video-card__image {
-  background-color: #aaa;
+  background-color: #000;
   position: relative;
   padding-bottom: 56.25%;
-}
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
 
-.video-card__duration {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2px 4px;
-  font-size: 0.875rem;
-  border-radius: 3px;
-  display: inline-block;
-  color: #fff;
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
+  &::after {
+    display: block;
+    content: attr(data-duration);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px 4px;
+    font-size: 0.875rem;
+    border-radius: 3px;
+    display: inline-block;
+    color: #fff;
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+  }
 }
 
 .video-card__title {

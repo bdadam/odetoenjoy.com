@@ -31,7 +31,8 @@ module.exports = {
     output: {
         path: path.resolve(process.cwd(), 'dist/static'),
         filename: '[name].js',
-        publicPath: '/static/'
+        publicPath: '/static/',
+        // chunkFilename: '[name].bundle.js',
     },
     cache: true,
     devtool: 'source-map',
