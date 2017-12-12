@@ -57,6 +57,9 @@ gulp.task('webpack', () => {
 });
 
 gulp.task('dev', ['web', 'nodemon', 'webpack']);
+gulp.task('build', () => {
+    require('./generator/index');
+});
 
 
 // gulp.task('webpack', (done) => {
