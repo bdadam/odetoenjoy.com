@@ -1,1 +1,2 @@
-echo "Test"
+# echo "Test"
+npx gulp build
