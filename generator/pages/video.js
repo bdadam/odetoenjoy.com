@@ -1,5 +1,6 @@
 const siteHeader = require('../components/site-header');
 const siteFooter = require('../components/site-footer');
+const tracking = require('../components/tracking.js');
 
 module.exports = (video) => `<!DOCTYPE html>
 <html lang="en">
@@ -75,6 +76,7 @@ module.exports = (video) => `<!DOCTYPE html>
     </main>
 
     ${siteFooter()}
+    ${tracking()}
 </body>
 </html>
 `;

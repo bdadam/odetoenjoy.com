@@ -1,6 +1,7 @@
 const siteHeader = require('../components/site-header');
 const siteFooter = require('../components/site-footer');
 const homeHero = require('../components/home-hero');
+const tracking = require('../components/tracking.js');
 
 module.exports = (model) => `<!DOCTYPE html>
 <html lang="en">
@@ -31,6 +32,7 @@ module.exports = (model) => `<!DOCTYPE html>
     </main>
 
     ${siteFooter()}
+    ${tracking()}
 </body>
 </html>
 `;
