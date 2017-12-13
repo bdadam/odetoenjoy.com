@@ -7,12 +7,14 @@ module.exports = (model = {}) => `
         </symbol>
     </svg>
 
-    ${model.backlink ? `<a href="${model.backlink.href}" class="site-header__back-button">
-        <svg class="icon" style="width: 1em; height: 1em;"><use xlink:href="#icon-arrow-left"></use></svg> ${model.backlink.text}
-    </a>` : ''}
-    
-    <nav class="site-navigation">
-        <a class="site-navigation__link" href="/">odetoenjoy.com</a>
-    </nav>
+    <div class="site-header__container">
+        ${model.backlink ? `<a href="${model.backlink.href}" class="site-header__back-button">
+            <svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg>
+        </a>` : ''}
+        
+        <nav class="site-navigation">
+            <a class="site-navigation__link" href="/">odetoenjoy.com</a>
+        </nav>
+    </div>
 </header>
 `;
