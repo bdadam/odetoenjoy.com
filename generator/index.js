@@ -43,6 +43,7 @@ const generatePages = async() => {
 
     generateVideoPages(videoViewModels);
     generateHomePage(videoViewModels);
+    generateSitemap(videoViewModels);
 };
 
 generatePages();
@@ -57,4 +58,14 @@ const generateVideoPages = videos => {
 const generateHomePage = videos => {
     const html = homePageTemplate({ title: 'TODO', description: 'TODO',  videos });
     return writeHtml(`dist/index.html`, html);
+};
+
+const generateSitemap = videos => {
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url><loc>https://www.odetoenjoy.com/</loc></url>
+    ${videos.map(video => `<url><loc>https://www.odetoenjoy.com/videos/${video.slug}</loc></url>`)}
+</urlset>
+    `;
+    return writeHtml('dist/sitemap.xml', xml);
 };
