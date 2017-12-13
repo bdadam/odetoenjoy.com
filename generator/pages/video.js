@@ -63,7 +63,8 @@ module.exports = (video) => `<!DOCTYPE html>
             </a>
         </section>
 
-        <div class="content-section video-recommendations">
+        <div class="content-section">
+            <h2 class="headline-2">Recommended videos</h2>
             <ul class="video-list">
             ${video.recommendedVideos.filter(v => v.slug !== video.slug).map(video => `
                 <li class="video-list__item">
