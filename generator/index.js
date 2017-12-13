@@ -36,7 +36,8 @@ const generatePages = async() => {
         return Object.assign(video, {
             htmlDescription,
             shortDescription,
-            meta
+            meta,
+            recommendedVideos: videos
         });
     });
 
