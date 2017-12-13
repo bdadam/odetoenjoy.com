@@ -33,11 +33,11 @@ gulp.task('web', () => {
 
 gulp.task('webpack', () => {
     const webpack = require('webpack');
-    const config = require('./generator/webpack.config');
+    const webpackConfig = require('./generator/webpack.config');
 
-    config.watch = true;
+    webpackConfig.watch = config.watch;
 
-    webpack(config, (err, stats) => {
+    webpack(webpackConfig, (err, stats) => {
         if (err) {
             console.error(err);
             return;
@@ -56,8 +56,8 @@ gulp.task('webpack', () => {
     });
 });
 
-gulp.task('dev', ['web', 'nodemon', 'webpack']);
-gulp.task('build', () => {
+gulp.task('dev', ['dev-mode', 'web', 'nodemon', 'webpack']);
+gulp.task('build', ['webpack'], () => {
     require('./generator/index');
 });
 
