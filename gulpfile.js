@@ -14,7 +14,10 @@ gulp.task('dev-mode', () => {
 
 gulp.task('nodemon', () => {
     const nodemon = require('nodemon');
-    nodemon('generator -e js,html,yaml,md');
+    const nm = nodemon({ script: 'generator/index.js', ext: 'js html yaml md nedb', watch: 'generator' });
+    nm.on('restart', (fileChanged) => {
+        console.log('Regenerating');
+    });
 });
 
 gulp.task('web', () => {
