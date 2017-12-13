@@ -29,6 +29,10 @@ module.exports = (video) => `<!DOCTYPE html>
             <title>E-mail</title>
             <path d="M29 4h-26c-1.657 0-3 1.343-3 3v18c0 1.656 1.343 3 3 3h26c1.657 0 3-1.344 3-3v-18c0-1.657-1.343-3-3-3zM2.741 25.99l-0.731-0.732 8.249-8.248 0.731 0.732-8.249 8.248zM29.259 25.99l-8.249-8.248 0.731-0.732 8.249 8.248-0.731 0.732zM17 19.325v0.675h-2v-0.675l-12.997-12.050 1.272-1.272 12.725 11.798 12.725-11.798 1.272 1.272-12.997 12.050z"></path>
         </symbol>
+        <symbol id="icon-arrow-left" viewBox="0 0 32 32">
+            <title>arrow-left</title>
+            <path d="M12.586 27.414l-10-10c-0.781-0.781-0.781-2.047 0-2.828l10-10c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-6.586 6.586h19.172c1.105 0 2 0.895 2 2s-0.895 2-2 2h-19.172l6.586 6.586c0.39 0.39 0.586 0.902 0.586 1.414s-0.195 1.024-0.586 1.414c-0.781 0.781-2.047 0.781-2.828 0z"></path>
+        </symbol>
     </svg>
 
 
@@ -36,29 +40,28 @@ module.exports = (video) => `<!DOCTYPE html>
         <video-player class="video-player" embed-url="${video.embedUrl}" src="" autoplay xstyle="background-image: url(${video.image}); background-repeat: no-repeat; background-size: cover; background-position: center center;">
             <div class="loader"></div>
         </video-player>
-        <h1 class="video-title">${video.title}</h1>
-        
-        <div class="video-description">
-
-            <div class="markdown-generated">
+      
+        <section class="content-section">
+            <h1 class="video-title">${video.title}</h1>
+            <div class="video-description markdown-generated">
                 ${video.htmlDescription}
             </div>
+        </section>
 
-            <div class="sharing-buttons">
-                <a class="share-button share-button--facebook" title="Share on Facebook" target="_blank" rel="external noopener" href="http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(video.meta.canonical)}">
-                    <svg class="icon"><use xlink:href="#icon-facebook"></use></svg>
-                    Facebook
-                </a>
-                <a class="share-button share-button--twitter" title="Share on Twitter" target="_blank" rel="external noopener" href="http://twitter.com/share?url=${encodeURIComponent(video.meta.canonical)}&text=${video.title}">
-                    <svg class="icon"><use xlink:href="#icon-twitter"></use></svg>
-                    Twitter
-                </a>
-                <a class="share-button share-button--email" title="Share by e-mail" href="mailto:?subject=${video.meta.title}&body=${encodeURIComponent(video.meta.canonical)}">
-                    <svg class="icon"><use xlink:href="#icon-email"></use></svg>
-                    Email
-                </a>
-            </div>
-        </div>
+        <section class="content-section sharing-buttons">
+            <a class="share-button share-button--facebook" title="Share on Facebook" target="_blank" rel="external noopener" href="http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(video.meta.canonical)}">
+                <svg class="icon"><use xlink:href="#icon-facebook"></use></svg>
+                Facebook
+            </a>
+            <a class="share-button share-button--twitter" title="Share on Twitter" target="_blank" rel="external noopener" href="http://twitter.com/share?url=${encodeURIComponent(video.meta.canonical)}&text=${video.title}">
+                <svg class="icon"><use xlink:href="#icon-twitter"></use></svg>
+                Twitter
+            </a>
+            <a class="share-button share-button--email" title="Share by e-mail" href="mailto:?subject=${video.meta.title}&body=${encodeURIComponent(video.meta.canonical)}">
+                <svg class="icon"><use xlink:href="#icon-email"></use></svg>
+                Email
+            </a>
+        </section>
 
         <div class="content-section video-recommendations">
             <ul class="video-list">

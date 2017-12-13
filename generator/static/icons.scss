@@ -1,6 +1,10 @@
 .icon {
-  // width: 1.5em;
-  // height: 1.5em;
   display: inline-block;
-  // vertical-align: top;
+  width: 1em;
+  height: 1em;
+  vertical-align: text-bottom;
+
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }

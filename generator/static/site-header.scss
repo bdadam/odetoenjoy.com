@@ -30,11 +30,6 @@
   text-decoration: none;
   
   &:hover, &:active {
-    text-decoration: underline;
-  }
-
-  &:before {
-    content: '<— ';
-    display: inline;
+    color: #000;
   }
 }
