@@ -67,7 +67,6 @@ module.exports = (video) => `<!DOCTYPE html>
                     <a class="video-card" href="/videos/${video.slug}.html" title="${video.title}">
                         <div class="video-card__image" style="background-image: url(${video.thumbnail});" data-duration="${video.duration}"></div>
                         <h2 class="video-card__title">${video.title}</h2>
-                        ${video.shortDescription}
                     </a>
                 </li>            
             `).join('')}
