@@ -8,10 +8,9 @@ module.exports = (video) => `<!DOCTYPE html>
     <title>${video.meta.title}</title>
     <meta name="description" content="${video.meta.description}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/main.css">
     <link rel="canonical" href="${video.meta.canonical}">
-    <script src="/static/main.js" defer></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>    
+    <link rel="stylesheet" href="/static/main.css?1">
+    <script src="/static/main.js?1" defer></script>
 </head>
 <body>
     ${siteHeader({ backlink: { href: '/', text: 'Home' } })}

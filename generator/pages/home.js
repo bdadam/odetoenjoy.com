@@ -9,8 +9,8 @@ module.exports = (model) => `<!DOCTYPE html>
     <title>${model.title}</title>
     <meta name="description" content="${model.description}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/main.css">
-    <script src="/static/main.js" defer></script>
+    <link rel="stylesheet" href="/static/main.css?1">
+    <script src="/static/main.js?1" defer></script>
 </head>
 <body>
     ${siteHeader()}
