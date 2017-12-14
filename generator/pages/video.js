@@ -8,7 +8,7 @@ module.exports = (video) => `<!DOCTYPE html>
     <meta charset="UTF-8">
     <title>${video.meta.title}</title>
     <meta name="description" content="${video.meta.description}">
-    <meta property="og:image" conten="https://www.odetoenjoy.com${video.thumbnail}">
+    <meta property="og:image" content="https://www.odetoenjoy.com${video.thumbnail}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="${video.meta.canonical}">
     <link rel="stylesheet" href="/static/main.css?1">
