@@ -56,7 +56,12 @@ const generateVideoPages = videos => {
 };
 
 const generateHomePage = videos => {
-    const html = homePageTemplate({ title: 'TODO', description: 'TODO',  videos });
+    const html = homePageTemplate({
+        title: 'Beethoven\'s Ode to Joy in various forms performed by various artists - Ode to Enjoy',
+        description: 'Ode to Joy is Beethoven\'s most famous music piece. The official hymn of the European Union. It is perfromed in numerous styles, from calssical to metal', 
+        videos
+    });
+
     return writeHtml(`dist/index.html`, html);
 };
 
