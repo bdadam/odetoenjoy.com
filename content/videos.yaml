@@ -1,14 +1,38 @@
+- src: https://www.youtube.com/watch?v=GBaHPND2QJg
+  title: Ode to Joy - Flashmob at Plaza Sabadel, Spain
+  alternate_videos:
+    - https://www.youtube.com/watch?v=XCwwcsSH5bI
+    - https://www.youtube.com/watch?v=kbJcQYVtZMo
+    - https://www.youtube.com/watch?v=87qT5BOl2XU
+    - https://www.youtube.com/watch?v=sLRd-gAyjAs
+  tags:
+    - flashmob
+  description: |
+    As a celebration of its 130th birthday Banco Sabadell organized a flashmob. The flashmob was performed by more than 100 musicians.
+    The bank with this event also supported the local campaign called Som Sabadell (We are Sabadell).
+
+    The whole performance was started by a little girl throwing a coin into the hat of a street musician. This was a coin spent exceptionally well. 
+
+    The flashmob took place in Sabadell, Spain on the placa de Sant Roc on a Saturday (19 May 2012) at 6pm.
+    The musicians were attending from the Orchestra Simfonica del Valles, the Coral Belles Arts, the Cor Lieder Camera and the Amics de l'Opera de Sabadell.
+
 - src: https://www.youtube.com/watch?v=bhMrYzjYPCU
   title: Flashmob in Peschiera del Garda
   description: |
     This flashmob took place in Peschiera del Garda in 2013 in Province of Verona in Italy.
     Countless musicians from 5 bands were playing Ode to Joy together.
+  tags:
+    - flashmob
 
 - src: https://www.youtube.com/watch?v=hP7Ghikc37Q
   title: Inno alla Gioia - Italian children singing Ode to Joy
+  tags:
+    - italian
 
 - src: https://www.youtube.com/watch?v=pHjSCFX-NNU
   title: Albano Carrisi aka Al Bano - Canto alla gioia
+  tags:
+    - italian
 
 - src: https://www.youtube.com/watch?v=t3217H8JppI
   title: Beethoven's 9th symphony
@@ -48,7 +72,3 @@
 
 - src: https://www.youtube.com/watch?v=rnjWUYE9UvU
   title: Ana Rucner - Ode To Joy (rock version)
-
-- src: https://www.youtube.com/watch?v=XCwwcsSH5bI
-  title: Ode to Joy - Flashmob at Plaza Sabadel, Spain
-
