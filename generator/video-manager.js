@@ -54,7 +54,7 @@ const crawlVideoPage = async (videoUrl) => {
     const imageFileName = crypto.createHash('md5').update(image).digest('hex');
 
     const x = await jimp.read(image);
-    const thumbnail = await new Promise(resolve => x.resize(360, jimp.AUTO).quality(80).getBuffer('image/jpeg', (err, buf) => resolve(buf)));
+    const thumbnail = await new Promise(resolve => x.background(0x0000000000).contain(480, 270).quality(80).getBuffer('image/jpeg', (err, buf) => resolve(buf)));
     const thumbnailFileName = crypto.createHash('md5').update(thumbnail).digest('hex');
 
     fs.writeFileSync(`dist/video-images/${imageFileName}.jpg`, image);

@@ -8,7 +8,16 @@ module.exports = (video) => `<!DOCTYPE html>
     <meta charset="UTF-8">
     <title>${video.meta.title}</title>
     <meta name="description" content="${video.meta.description}">
+    
+    <meta property="fb:app_id" content="1771654119806913">
+    <meta property="og:title" content="${video.title}">
+    <meta property="og:description" content="${video.meta.description}">
+    <meta property="og:type" content="video.other">
+    <meta property="og:url" content="${video.meta.canonical}">
     <meta property="og:image" content="https://www.odetoenjoy.com${video.thumbnail}">
+    <meta property="og:image:width" content="480">
+    <meta property="og:image:height" content="270">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="${video.meta.canonical}">
     <link rel="stylesheet" href="/static/main.css?1">

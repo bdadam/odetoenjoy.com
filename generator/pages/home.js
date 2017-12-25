@@ -9,6 +9,12 @@ module.exports = (model) => `<!DOCTYPE html>
     <meta charset="UTF-8">
     <title>${model.title}</title>
     <meta name="description" content="${model.description}">
+
+    <meta property="fb:app_id" content="1771654119806913">
+    <meta property="og:title" content="${model.title}">
+    <meta property="og:description" content="${model.description}">
+    <meta property="og:type" content="website">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/static/main.css?1">
     <script src="/static/main.js?1" defer></script>
