@@ -1,42 +1,44 @@
 .site-header {
-  text-align: center;
-  border-bottom: 1px solid #cdcdcd;
-  background-color: #f1f1f1;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-bottom: 1px solid #cdcdcd;
+    background-color: #f1f1f1;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
 .site-header__container {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .site-navigation__link {
-  display: inline-block;
-  padding: 16px 0;
-  font-size: 1.25rem;
-  color: #333;
-  font-weight: bold;
-  text-decoration: none;
+    display: inline-block;
+    padding: 16px 0;
+    font-size: 1.25rem;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
 
-  &:hover, &:active {
-    text-decoration: underline;
-  }
+    &:hover,
+    &:active {
+        text-decoration: underline;
+    }
 }
 
 .site-header__back-button {
-  color: #333;
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1.25rem;
-  padding: 16px 20px;
-  text-decoration: none;
-  
-  &:hover, &:active {
-    color: #000;
-  }
+    color: #333;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.25rem;
+    padding: 16px 20px;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+        color: #000;
+    }
 }

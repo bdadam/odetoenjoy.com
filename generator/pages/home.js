@@ -3,14 +3,14 @@ const siteFooter = require('../components/site-footer');
 const homeHero = require('../components/home-hero');
 const tracking = require('../components/tracking.js');
 
-module.exports = (model) => `<!DOCTYPE html>
+module.exports = model => `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>${model.title}</title>
     <meta name="description" content="${model.description}">
     <link rel="canonical" href="https://www.odetoenjoy.com/">    
-
+    
     <meta property="fb:app_id" content="1771654119806913">
     <meta property="og:title" content="${model.title}">
     <meta property="og:description" content="${model.description}">
@@ -27,14 +27,18 @@ module.exports = (model) => `<!DOCTYPE html>
     <main>
         <h1 class="headline-1 content-section">Variations on Beethoven's Ode to Joy</h1>
         <ul class="content-section video-list">
-            ${model.videos.map(video => `
+            ${model.videos
+                .map(
+                    video => `
                 <li class="video-list__item">
                     <a class="video-card" href="/videos/${video.slug}.html" title="${video.title}">
                         <div class="video-card__image" style="background-image: url(${video.thumbnail});" data-duration="${video.duration}"></div>
                         <h2 class="video-card__title">${video.title}</h2>
                     </a>
                 </li>            
-            `).join('')}
+            `
+                )
+                .join('')}
         </ul>
     </main>
 

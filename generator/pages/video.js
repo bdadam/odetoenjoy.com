@@ -2,7 +2,7 @@ const siteHeader = require('../components/site-header');
 const siteFooter = require('../components/site-footer');
 const tracking = require('../components/tracking.js');
 
-module.exports = (video) => `<!DOCTYPE html>
+module.exports = video => `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -47,7 +47,11 @@ module.exports = (video) => `<!DOCTYPE html>
 
 
     <main>
-        <video-player class="video-player" embed-url="${video.embedUrl}" src="" autoplay xstyle="background-image: url(${video.image}); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+        <video-player class="video-player" embed-url="${
+            video.embedUrl
+        }" src="" autoplay xstyle="background-image: url(${
+    video.image
+}); background-repeat: no-repeat; background-size: cover; background-position: center center;">
             <div class="loader"></div>
         </video-player>
       
@@ -59,15 +63,21 @@ module.exports = (video) => `<!DOCTYPE html>
         </section>
 
         <section class="content-section sharing-buttons">
-            <a class="share-button share-button--facebook" title="Share on Facebook" target="_blank" rel="external noopener" href="http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(video.meta.canonical)}">
+            <a class="share-button share-button--facebook" title="Share on Facebook" target="_blank" rel="external noopener" href="http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                video.meta.canonical
+            )}">
                 <svg class="icon"><use xlink:href="#icon-facebook"></use></svg>
                 Facebook
             </a>
-            <a class="share-button share-button--twitter" title="Share on Twitter" target="_blank" rel="external noopener" href="http://twitter.com/share?url=${encodeURIComponent(video.meta.canonical)}&text=${video.title}">
+            <a class="share-button share-button--twitter" title="Share on Twitter" target="_blank" rel="external noopener" href="http://twitter.com/share?url=${encodeURIComponent(
+                video.meta.canonical
+            )}&text=${video.title}">
                 <svg class="icon"><use xlink:href="#icon-twitter"></use></svg>
                 Twitter
             </a>
-            <a class="share-button share-button--email" title="Share by e-mail" href="mailto:?subject=${video.meta.title}&body=${encodeURIComponent(video.meta.canonical)}">
+            <a class="share-button share-button--email" title="Share by e-mail" href="mailto:?subject=${
+                video.meta.title
+            }&body=${encodeURIComponent(video.meta.canonical)}">
                 <svg class="icon"><use xlink:href="#icon-email"></use></svg>
                 Email
             </a>
@@ -76,14 +86,19 @@ module.exports = (video) => `<!DOCTYPE html>
         <div class="content-section">
             <h2 class="headline-2">Recommended videos</h2>
             <ul class="video-list">
-            ${video.recommendedVideos.filter(v => v.slug !== video.slug).map(video => `
+            ${video.recommendedVideos
+                .filter(v => v.slug !== video.slug)
+                .map(
+                    video => `
                 <li class="video-list__item">
                     <a class="video-card" href="/videos/${video.slug}.html" title="${video.title}">
                         <div class="video-card__image" style="background-image: url(${video.thumbnail});" data-duration="${video.duration}"></div>
                         <h2 class="video-card__title">${video.title}</h2>
                     </a>
                 </li>            
-            `).join('')}
+            `
+                )
+                .join('')}
             </ul>
         </div>
     </main>

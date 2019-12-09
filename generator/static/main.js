@@ -8,15 +8,15 @@ import './main.scss';
 // console.log('MAIN');
 
 document.registerElement('video-player', {
-    prototype: Object.create(
-        HTMLElement.prototype, {
-            // createdCallback: {value: function() {
-            //     console.log('custom element ready/upgraded');
-            //     // better than V1 constructor() {}
-            //     // because the element here will always
-            //     // be already upgraded
-            // }},
-            attachedCallback: {value: function() {
+    prototype: Object.create(HTMLElement.prototype, {
+        // createdCallback: {value: function() {
+        //     console.log('custom element ready/upgraded');
+        //     // better than V1 constructor() {}
+        //     // because the element here will always
+        //     // be already upgraded
+        // }},
+        attachedCallback: {
+            value: function() {
                 const embedUrl = this.getAttribute('embed-url');
 
                 const iframe = document.createElement('iframe');
@@ -39,19 +39,20 @@ document.registerElement('video-player', {
                 // });
                 // console.log('custom element connected');
                 // same as connectedCallback
-            }}
-            // detachedCallback: {value: function() {
-            //     console.log('custom element disconnected');
-            //     // same as disconnectedCallback
-            // }},
-            // attributeChangedCallback: {value: function(
-            //     name, oldValue, newValue
-            // ) {
-            //     console.log('*any* attribute change');
-            //     // different from V1 in two ways:
-            //     //  * it does not trigger twice with same attribute value
-            //     //  * it triggers for any attribute change, no need
-            //     //    to define static get observedAttributes() {[...]}
-            // }}
-        })
+            },
+        },
+        // detachedCallback: {value: function() {
+        //     console.log('custom element disconnected');
+        //     // same as disconnectedCallback
+        // }},
+        // attributeChangedCallback: {value: function(
+        //     name, oldValue, newValue
+        // ) {
+        //     console.log('*any* attribute change');
+        //     // different from V1 in two ways:
+        //     //  * it does not trigger twice with same attribute value
+        //     //  * it triggers for any attribute change, no need
+        //     //    to define static get observedAttributes() {[...]}
+        // }}
+    }),
 });

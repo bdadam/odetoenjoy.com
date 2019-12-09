@@ -13,31 +13,37 @@ const videodb = new Datastore({ filename: dbpath, autoload: true });
 
 const writeHtml = require('./services/writeHtml');
 
-const findVideos = () => new Promise((resolve, reject) => {
-    videodb.find({}).sort({ index: 1 }).exec((err, videos) => {
-        if (err) { return reject(err); }
-        resolve(videos);
+const findVideos = () =>
+    new Promise((resolve, reject) => {
+        videodb
+            .find({})
+            .sort({ index: 1 })
+            .exec((err, videos) => {
+                if (err) {
+                    return reject(err);
+                }
+                resolve(videos);
+            });
     });
-});
 
-const generatePages = async() => {
+const generatePages = async () => {
     const videos = await findVideos();
 
     const videoViewModels = videos.map(video => {
         const htmlDescription = marked(video.description || '');
         const shortDescription = (video.description || '').split('\n')[0];
-    
+
         const meta = {
             title: `${video.title} (${video.duration || ''})`,
             description: shortDescription,
-            canonical: `https://www.odetoenjoy.com/videos/${video.slug}`
+            canonical: `https://www.odetoenjoy.com/videos/${video.slug}`,
         };
-    
+
         return Object.assign(video, {
             htmlDescription,
             shortDescription,
             meta,
-            recommendedVideos: videos
+            recommendedVideos: videos,
         });
     });
 
@@ -58,8 +64,9 @@ const generateVideoPages = videos => {
 const generateHomePage = videos => {
     const html = homePageTemplate({
         title: 'Beethoven\'s Ode to Joy in various forms performed by various artists - Ode to Enjoy',
-        description: 'Ode to Joy is Beethoven\'s most famous music piece. The official hymn of the European Union. It is perfromed in numerous styles, from calssical to metal', 
-        videos
+        description:
+            'Ode to Joy is Beethoven\'s most famous music piece. The official hymn of the European Union. It is perfromed in numerous styles, from calssical to metal',
+        videos,
     });
 
     return writeHtml(`dist/index.html`, html);
