@@ -28,7 +28,7 @@ const generatePages = async() => {
         const shortDescription = (video.description || '').split('\n')[0];
     
         const meta = {
-            title: `${video.title} (${video.duration || ''}) | odetoenjoy.com`,
+            title: `${video.title} (${video.duration || ''})`,
             description: shortDescription,
             canonical: `https://www.odetoenjoy.com/videos/${video.slug}`
         };

@@ -9,6 +9,7 @@ module.exports = (model) => `<!DOCTYPE html>
     <meta charset="UTF-8">
     <title>${model.title}</title>
     <meta name="description" content="${model.description}">
+    <link rel="canonical" href="https://www.odetoenjoy.com/">    
 
     <meta property="fb:app_id" content="1771654119806913">
     <meta property="og:title" content="${model.title}">
@@ -24,6 +25,7 @@ module.exports = (model) => `<!DOCTYPE html>
     ${'' && homeHero()}
     
     <main>
+        <h1 class="headline-1 content-section">Variations on Beethoven's Ode to Joy</h1>
         <ul class="content-section video-list">
             ${model.videos.map(video => `
                 <li class="video-list__item">
