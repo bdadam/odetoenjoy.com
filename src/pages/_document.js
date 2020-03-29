@@ -11,17 +11,18 @@ class MyDocument extends Document {
             <Html>
                 <Head />
                 <body>
+                    {/* <iframe
+                        hidden
+                        id="youtube-player-iframe"
+                        frameBorder="0"
+                        // style={{ position: 'absolute' }}
+                        referrerPolicy="no-referrer"
+                        allowFullScreen
+                        // sandbox="allow-orientation-lock allow-pointer-lock allow-scripts allow-popups allow-popups-to-escape-sandbox allow-forms allow-presentation"
+                    ></iframe> */}
                     <Main />
                     <NextScript />
-                    <iframe
-                        hidden
-                        id="player"
-                        type="text/html"
-                        width="640"
-                        height="390"
-                        src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://localhost:3000"
-                        frameBorder="0"
-                    ></iframe>
+                    {/* TODO: finish sandbox */}
                 </body>
             </Html>
         );
