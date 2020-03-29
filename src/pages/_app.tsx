@@ -1,13 +1,12 @@
 import Head from 'next/head';
-import { useEffect } from 'react';
+import { AppProps } from 'next/app';
 
 import './default.less';
 
 import SiteHeader from '../components/SiteHeader/SiteHeader';
 import SiteFooter from '../components/SiteFooter/SiteFooter';
 
-function App({ Component, pageProps }) {
-    console.log(pageProps);
+function App({ Component, pageProps }: AppProps) {
     return (
         <>
             <Head>
