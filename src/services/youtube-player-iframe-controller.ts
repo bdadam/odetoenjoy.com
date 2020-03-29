@@ -73,14 +73,6 @@ export const init = (videoId: string, iframe: HTMLIFrameElement) => {
     }
 
     return {
-        position: (x: number, y: number, width: number, height: number) => {
-            console.log('Position', x, y, width, height);
-
-            iframe.style.top = `${x}px`;
-            iframe.style.left = `${y}px`;
-            iframe.style.width = `${width}px`;
-            iframe.style.height = `${height}px`;
-        },
         stop: () => {
             sendCommand(iframe, { event: 'command', func: 'stopVideo' });
         },
