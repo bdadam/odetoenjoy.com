@@ -46,8 +46,8 @@ export const init = (videoId: string, iframe: HTMLIFrameElement) => {
 
     if (!iframe.src || iframe.dataset.ready !== '1') {
         iframe.style.opacity = '0';
-        iframe.src = `https://youtube.com/embed/${videoId}?enablejsapi=1&modestbranding=1`;
-        // iframe.src = `https://youtube.com/embed/${videoId}?enablejsapi=1&modestbranding=1&autoplay=1`;
+        iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&modestbranding=1`;
+        // iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&modestbranding=1&autoplay=1`;
 
         iframe.onload = () => {
             iframe.dataset.ready = '1';
