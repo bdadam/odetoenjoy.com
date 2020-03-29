@@ -7,6 +7,7 @@ import SiteHeader from '../components/SiteHeader/SiteHeader';
 import SiteFooter from '../components/SiteFooter/SiteFooter';
 
 function App({ Component, pageProps }) {
+    console.log(pageProps);
     return (
         <>
             <Head>
@@ -16,17 +17,19 @@ function App({ Component, pageProps }) {
             </Head>
             <div className="app">
                 <SiteHeader />
-                <div id="youtube-player-iframe">
-                    <iframe
-                        hidden
-                        id="youtube-player-iframe2"
-                        frameBorder="0"
-                        referrerPolicy="no-referrer"
-                        allowFullScreen
-                        // sandbox="allow-orientation-lock allow-pointer-lock allow-scripts allow-popups allow-popups-to-escape-sandbox allow-forms allow-presentation"
-                    ></iframe>
+                <div className="app-content">
+                    <div className="youtube-player video-player" hidden>
+                        <iframe
+                            frameBorder="0"
+                            referrerPolicy="no-referrer"
+                            allowFullScreen
+                            // TODO: init player with invalid id (src="") so that when opening a video then it can autoplay
+                            // src="https://youtube.com/embed/unknown?enablejsapi=1&modestbranding=1"
+                            // sandbox="allow-orientation-lock allow-pointer-lock allow-scripts allow-popups allow-popups-to-escape-sandbox allow-forms allow-presentation"
+                        ></iframe>
+                    </div>
+                    <Component {...pageProps} />
                 </div>
-                <Component {...pageProps} />
                 <SiteFooter />
             </div>
         </>

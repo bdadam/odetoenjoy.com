@@ -33,10 +33,6 @@ type StopVideo = {
 
 type YoutubeCommand = Listening | LoadVideoById | StopVideo;
 
-const x: Props = {
-    iframe: undefined,
-};
-
 const sendCommand = (iframe: HTMLIFrameElement | undefined, cmd: YoutubeCommand) => {
     if (!iframe) {
         return;
@@ -46,9 +42,7 @@ const sendCommand = (iframe: HTMLIFrameElement | undefined, cmd: YoutubeCommand)
 };
 
 export const init = (videoId: string, iframe: HTMLIFrameElement) => {
-    // const iframe = document.querySelector<HTMLIFrameElement>('#youtube-player-iframe2')!;
-
-    iframe.hidden = false;
+    iframe.parentElement!.hidden = false;
 
     if (!iframe.src || iframe.dataset.ready !== '1') {
         iframe.style.opacity = '0';
@@ -77,7 +71,8 @@ export const init = (videoId: string, iframe: HTMLIFrameElement) => {
             sendCommand(iframe, { event: 'command', func: 'stopVideo' });
         },
         hide: () => {
-            iframe.hidden = true;
+            // iframe.hidden = true;
+            iframe.parentElement!.hidden = true;
             sendCommand(iframe, { event: 'command', func: 'stopVideo' });
         },
     };

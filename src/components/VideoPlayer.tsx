@@ -9,35 +9,17 @@ const VideoPlayer: React.FC<{ url: string; img: string }> = ({ url, img }) => {
         const videoId = url.substr(-11);
         const controller = YoutubeController.init(
             videoId,
-            document.querySelector<HTMLIFrameElement>('#youtube-player-iframe2')!
+            document.querySelector<HTMLIFrameElement>('.youtube-player iframe')!
         );
-
-        // const pos = () => {
-        //     if (window.innerWidth >= 1024) {
-        //         controller.position(
-        //             playerElement.current!.offsetTop,
-        //             playerElement.current!.offsetLeft,
-        //             playerElement.current!.clientWidth,
-        //             playerElement.current!.clientHeight
-        //         );
-        //     }
-        // };
-
-        // pos();
-
-        // window.addEventListener('resize', pos);
 
         return () => {
             controller.hide();
-            // window.removeEventListener('resize', pos);
         };
     }, [url]);
 
     return (
         <div className="video-player" ref={playerElement}>
-            <div className="preview-image-container">
-                <img src={img} alt="" className="preview-image" />
-            </div>
+            <img src={img} alt="" className="preview-image" />
         </div>
     );
 };
