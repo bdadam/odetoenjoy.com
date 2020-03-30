@@ -17,7 +17,7 @@ function App({ Component, pageProps }: AppProps) {
             <div className="app">
                 <SiteHeader />
                 <div className="app-content">
-                    <div className="youtube-player video-player" hidden>
+                    <div className="video-player youtube-player" hidden>
                         <iframe
                             frameBorder="0"
                             referrerPolicy="no-referrer"
