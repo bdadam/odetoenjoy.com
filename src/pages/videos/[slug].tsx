@@ -5,9 +5,8 @@ import { Video } from 'types';
 
 import findAllVideos from '../../services/find-all-videos';
 import VideoPlayer from '../../components/VideoPlayer';
-import Sidebar from '../../components/Sidebar/Sidebar';
-import Link from 'next/link';
 import LikeBox from '../../components/LikeBox/LikeBox';
+import VideoItems from '../../components/VideoItems/VideoItems';
 
 // const Page = props => {
 //     return (
@@ -38,51 +37,13 @@ const VideoPage: NextPage<{ video: Video; toplist: Video[] }> = ({ video, toplis
         <>
             <VideoPlayer url={video.embedUrl} img={video.image} />
             <div className="content">
-                <h1 className="page-title">{video.title}</h1>
+                <h1 className="video-title">{video.title}</h1>
                 <div>{video.description}</div>
             </div>
             <div className="sidebar">
                 <LikeBox />
-                {toplist.map(video => {
-                    return (
-                        <Link href="/videos/[slug]" as={`/videos/${video.slug}`} key={video.slug}>
-                            <a href={`/videos/${video.slug}`} style={{ display: 'block' }}>
-                                <div
-                                    style={{
-                                        backgroundImage: `url(${video.image})`,
-                                        backgroundSize: 'cover',
-                                        display: 'inline-block',
-                                        width: 120,
-                                        height: 80,
-                                    }}
-                                ></div>
-                                {video.title}
-                            </a>
-                        </Link>
-                    );
-                })}
+                <VideoItems videos={toplist} modifier="small" />
             </div>
-
-            {/* <Sidebar>
-                {toplist.map(video => {
-                    return (
-                        <Link href="/videos/[slug]" as={`/videos/${video.slug}`} key={video.slug}>
-                            <a href={`/videos/${video.slug}`} style={{ display: 'block' }}>
-                                <div
-                                    style={{
-                                        backgroundImage: `url(${video.image})`,
-                                        backgroundSize: 'cover',
-                                        display: 'inline-block',
-                                        width: 120,
-                                        height: 80,
-                                    }}
-                                ></div>
-                                {video.title}
-                            </a>
-                        </Link>
-                    );
-                })}
-            </Sidebar> */}
 
             <Head>
                 <title>

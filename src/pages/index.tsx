@@ -20,8 +20,7 @@ type HomePageProps = {
 };
 
 import LikeBox from '../components/LikeBox/LikeBox';
-
-import Sidebar from '../components/Sidebar/Sidebar';
+import VideoItems from '../components/VideoItems/VideoItems';
 
 const Home: React.FC<HomePageProps> = ({ videos, toplist, lyrics }) => {
     return (
@@ -34,8 +33,29 @@ const Home: React.FC<HomePageProps> = ({ videos, toplist, lyrics }) => {
                 />
                 <link rel="canonical" href="https://www.odetoenjoy.com/" />
             </Head>
+
+            <h1 className="page-title">Variations on Beethoven's Ode to Joy</h1>
             <div className="content">
-                <h1 className="page-title">Variations on Beethoven's Ode to Joy</h1>
+                <VideoItems videos={videos} />
+
+                {/* <ul className="video-items">
+                    {videos.map(v => (
+                        <li key={v.slug} className="video-item">
+                            <Link href="/videos/[slug]" as={`/videos/${v.slug}`}>
+                                <a className="card">
+                                    <div className="picture-frame">
+                                        <img src={v.thumbnail} />
+                                        <span className="duration">{v.duration}</span>
+                                    </div>
+
+                                    <div className="content">
+                                        <p className="title">{v.title}</p>
+                                    </div>
+                                </a>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
 
                 <ul className="video-top-list">
                     {toplist
@@ -44,7 +64,6 @@ const Home: React.FC<HomePageProps> = ({ videos, toplist, lyrics }) => {
                             <li key={v.slug}>
                                 <Link href="/videos/[slug]" as={`/videos/${v.slug}`}>
                                     <a className="video-top-list__item">
-                                        {/* <img src={v.thumbnail} /> */}
                                         <div className="picture" style={{ backgroundImage: `url("${v.thumbnail}")` }} />
                                         <div className="content">
                                             <p className="title">{v.title}</p>
@@ -60,7 +79,6 @@ const Home: React.FC<HomePageProps> = ({ videos, toplist, lyrics }) => {
                         <li key={v.slug}>
                             <Link href="/videos/[slug]" as={`/videos/${v.slug}`}>
                                 <a className="video-list__item">
-                                    {/* <img src={v.thumbnail} /> */}
                                     <div className="picture" style={{ backgroundImage: `url("${v.thumbnail}")` }} />
                                     <div className="content">
                                         <p className="title">{v.title}</p>
@@ -76,7 +94,6 @@ const Home: React.FC<HomePageProps> = ({ videos, toplist, lyrics }) => {
                         <li key={v.slug}>
                             <Link href="/videos/[slug]" as={`/videos/${v.slug}`}>
                                 <a className="video-grid-item">
-                                    {/* <img src={v.thumbnail} /> */}
                                     <div className="image-169" style={{ backgroundImage: `url("${v.thumbnail}")` }} />
                                     <div className="card-content">
                                         <p className="title bold">{v.title}</p>
@@ -85,7 +102,7 @@ const Home: React.FC<HomePageProps> = ({ videos, toplist, lyrics }) => {
                             </Link>
                         </li>
                     ))}
-                </ul>
+                </ul> */}
 
                 <div className="body-text">
                     <h2>Ode to Joy (An die Freude)</h2>

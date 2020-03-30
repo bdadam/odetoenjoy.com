@@ -20,9 +20,16 @@
 
     display: grid;
     grid-template-areas:
+        'page-title'
         'video-player'
         'content'
         'sidebar';
+}
+
+.page-title {
+    grid-area: page-title;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .youtube-player {
@@ -56,6 +63,7 @@
 @media (min-width: 1024px) {
     .app-content {
         grid-template-areas:
+            'page-title page-title'
             'video-player sidebar'
             'content sidebar';
         grid-template-columns: 3fr 1fr;
@@ -63,6 +71,10 @@
         column-gap: 12px;
         padding-left: 12px;
         padding-right: 12px;
+    }
+
+    .page-title {
+        padding: 0;
     }
 
     .youtube-player {
