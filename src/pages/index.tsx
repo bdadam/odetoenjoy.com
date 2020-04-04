@@ -29,7 +29,7 @@ const Home: React.FC<HomePageProps> = ({ videos, toplist, lyrics }) => {
                 <title>Beethoven's Ode to Joy in various forms performed by various artists - Ode to Enjoy</title>
                 <meta
                     name="description"
-                    content="Ode to Joy is Beethoven's most famous music piece. The official hymn of the European Union. It is perfromed in numerous styles, from calssical to metal"
+                    content="Ode to Joy is Beethoven's most famous music piece. The official hymn of the European Union. It is perfromed in various styles: from calssical through pop to metal"
                 />
                 <link rel="canonical" href="https://www.odetoenjoy.com/" />
             </Head>
@@ -37,72 +37,6 @@ const Home: React.FC<HomePageProps> = ({ videos, toplist, lyrics }) => {
             <h1 className="page-title">Variations on Beethoven's Ode to Joy</h1>
             <div className="content">
                 <VideoItems videos={videos} />
-
-                {/* <ul className="video-items">
-                    {videos.map(v => (
-                        <li key={v.slug} className="video-item">
-                            <Link href="/videos/[slug]" as={`/videos/${v.slug}`}>
-                                <a className="card">
-                                    <div className="picture-frame">
-                                        <img src={v.thumbnail} />
-                                        <span className="duration">{v.duration}</span>
-                                    </div>
-
-                                    <div className="content">
-                                        <p className="title">{v.title}</p>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-
-                <ul className="video-top-list">
-                    {toplist
-                        .filter((_, idx) => idx < 1)
-                        .map(v => (
-                            <li key={v.slug}>
-                                <Link href="/videos/[slug]" as={`/videos/${v.slug}`}>
-                                    <a className="video-top-list__item">
-                                        <div className="picture" style={{ backgroundImage: `url("${v.thumbnail}")` }} />
-                                        <div className="content">
-                                            <p className="title">{v.title}</p>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </li>
-                        ))}
-                </ul>
-
-                <ul className="video-list">
-                    {videos.map(v => (
-                        <li key={v.slug}>
-                            <Link href="/videos/[slug]" as={`/videos/${v.slug}`}>
-                                <a className="video-list__item">
-                                    <div className="picture" style={{ backgroundImage: `url("${v.thumbnail}")` }} />
-                                    <div className="content">
-                                        <p className="title">{v.title}</p>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-
-                <ul className="video-grid">
-                    {videos.map(v => (
-                        <li key={v.slug}>
-                            <Link href="/videos/[slug]" as={`/videos/${v.slug}`}>
-                                <a className="video-grid-item">
-                                    <div className="image-169" style={{ backgroundImage: `url("${v.thumbnail}")` }} />
-                                    <div className="card-content">
-                                        <p className="title bold">{v.title}</p>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                    ))}
-                </ul> */}
 
                 <div className="body-text">
                     <h2>Ode to Joy (An die Freude)</h2>

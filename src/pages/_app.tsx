@@ -13,6 +13,11 @@ function App({ Component, pageProps }: AppProps) {
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta property="fb:app_id" content="1771654119806913" />
+                <link rel="icon" href="/logo-plain.svg" />
+                <link
+                    href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2:400,600&display=swap&subset=latin-ext"
+                    rel="stylesheet"
+                />
             </Head>
             <div className="app">
                 <SiteHeader />
@@ -20,10 +25,11 @@ function App({ Component, pageProps }: AppProps) {
                     <div className="video-player youtube-player" hidden>
                         <iframe
                             frameBorder="0"
-                            referrerPolicy="no-referrer"
+                            // referrerPolicy="no-referrer"
+                            referrerPolicy="origin"
                             allowFullScreen
                             // TODO: init player with invalid id (src="") so that when opening a video then it can autoplay
-                            // src="https://youtube.com/embed/unknown?enablejsapi=1&modestbranding=1"
+                            // src="https://youtube.com/embed/cdwal5Kw3Fc?enablejsapi=1&modestbranding=1" // 1 sec video
                             // sandbox="allow-orientation-lock allow-pointer-lock allow-scripts allow-popups allow-popups-to-escape-sandbox allow-forms allow-presentation"
                         ></iframe>
                     </div>

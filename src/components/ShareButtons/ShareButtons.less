@@ -1,0 +1,74 @@
+.share-buttons {
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-evenly;
+    // width: 100%;
+    margin-bottom: 20px;
+
+    @media (max-width: 1023px) {
+        .network-name {
+            display: none;
+        }
+    }
+
+    .video-link {
+        padding: 4px;
+    }
+}
+
+.share-button(@bgcolor) {
+    color: #fff;
+    background-color: @bgcolor;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 12px;
+    border: 0;
+
+    &:not(:last-child) {
+        margin-right: 12px;
+    }
+
+    svg {
+        @media (min-width: 1024px) {
+            margin-right: 8px;
+        }
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        color: currentColor;
+        fill: currentColor;
+    }
+
+    &:hover {
+        background-color: darken(@bgcolor, 10%);
+    }
+
+    &:active {
+        background-color: darken(@bgcolor, 20%);
+    }
+}
+
+.share-button--fb {
+    .share-button(#3b5998);
+}
+
+.share-button--tw {
+    .share-button(#2795e9);
+}
+
+.share-button--wa {
+    .share-button(#25d366);
+}
+
+.share-button--email {
+    .share-button(#444);
+}
+
+.share-button--copy {
+    .share-button(green);
+}
+
+.share-button--native {
+    .share-button(blue);
+}

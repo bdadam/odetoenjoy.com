@@ -7,6 +7,7 @@ import findAllVideos from '../../services/find-all-videos';
 import VideoPlayer from '../../components/VideoPlayer';
 import LikeBox from '../../components/LikeBox/LikeBox';
 import VideoItems from '../../components/VideoItems/VideoItems';
+import ShareButtons from '../../components/ShareButtons/ShareButtons';
 
 // const Page = props => {
 //     return (
@@ -39,6 +40,8 @@ const VideoPage: NextPage<{ video: Video; toplist: Video[] }> = ({ video, toplis
             <div className="content">
                 <h1 className="video-title">{video.title}</h1>
                 <div>{video.description}</div>
+
+                <ShareButtons title={video.title} url={`https://www.odetoenjoy.com/videos/${video.slug}`} />
             </div>
             <div className="sidebar">
                 <LikeBox />
