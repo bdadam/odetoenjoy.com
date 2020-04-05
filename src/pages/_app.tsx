@@ -23,15 +23,17 @@ function App({ Component, pageProps }: AppProps) {
                 <SiteHeader />
                 <div className="app-content">
                     <div className="video-player youtube-player" hidden>
-                        <iframe
-                            frameBorder="0"
-                            // referrerPolicy="no-referrer"
-                            referrerPolicy="origin"
-                            allowFullScreen
-                            // TODO: init player with invalid id (src="") so that when opening a video then it can autoplay
-                            // src="https://youtube.com/embed/cdwal5Kw3Fc?enablejsapi=1&modestbranding=1" // 1 sec video
-                            // sandbox="allow-orientation-lock allow-pointer-lock allow-scripts allow-popups allow-popups-to-escape-sandbox allow-forms allow-presentation"
-                        ></iframe>
+                        <div>
+                            <iframe
+                                frameBorder="0"
+                                // referrerPolicy="no-referrer"
+                                referrerPolicy="origin"
+                                allowFullScreen
+                                // TODO: init player with invalid id (src="") so that when opening a video then it can autoplay
+                                // src="https://youtube.com/embed/cdwal5Kw3Fc?enablejsapi=1&modestbranding=1" // 1 sec video
+                                // sandbox="allow-orientation-lock allow-pointer-lock allow-scripts allow-popups allow-popups-to-escape-sandbox allow-forms allow-presentation"
+                            ></iframe>
+                        </div>
                     </div>
                     <Component {...pageProps} />
                 </div>

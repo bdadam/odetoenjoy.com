@@ -42,7 +42,7 @@ const sendCommand = (iframe: HTMLIFrameElement | undefined, cmd: YoutubeCommand)
 };
 
 export const init = (videoId: string, iframe: HTMLIFrameElement) => {
-    iframe.parentElement!.hidden = false;
+    iframe.parentElement!.parentElement!.hidden = false;
 
     if (!iframe.src || iframe.dataset.ready !== '1') {
         iframe.style.opacity = '0';

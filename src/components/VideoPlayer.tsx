@@ -20,7 +20,9 @@ const VideoPlayer: React.FC<{ url: string; img: string }> = ({ url, img }) => {
 
     return (
         <div className="video-player" ref={playerElement}>
-            <img src={img} alt="" className="preview-image" />
+            <div>
+                <img src={img} alt="" className="preview-image" />
+            </div>
         </div>
     );
 };
