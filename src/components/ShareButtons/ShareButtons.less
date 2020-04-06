@@ -4,6 +4,18 @@
     // justify-content: space-evenly;
     // width: 100%;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    align-items: center;
+
+    .share-this {
+        flex-shrink: 0;
+        margin-right: 12px;
+        font-weight: bold;
+    }
 
     @media (max-width: 1023px) {
         .network-name {
@@ -22,7 +34,7 @@
     display: inline-block;
     text-decoration: none;
     border-radius: 3px;
-    padding: 12px 16px;
+    padding: 8px 12px;
     border: 0;
     line-height: 24px;
 
@@ -71,9 +83,13 @@
 }
 
 .share-button--copy {
-    .share-button(green);
+    .share-button(#1ba47a);
 }
 
 .share-button--native {
     .share-button(blue);
+}
+
+.share-button--main {
+    .share-button(#911440);
 }

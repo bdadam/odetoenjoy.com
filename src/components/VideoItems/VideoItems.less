@@ -69,6 +69,38 @@
     }
 }
 
+@media (max-width: 768px) {
+    .video-items {
+        grid-template-columns: auto;
+
+        .video-item__card {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .video-item__picture-frame {
+            width: 128px;
+            margin-right: 10px;
+        }
+
+        .video-item__duration {
+            bottom: 6px;
+            right: 6px;
+        }
+
+        .video-item__content {
+            flex: 1 1;
+            width: 100%;
+        }
+
+        .video-item__title {
+            margin-top: 0;
+            font-size: 0.875rem;
+        }
+    }
+}
+
 .video-items--small {
     grid-template-columns: auto;
 

@@ -1,0 +1,22 @@
+.modal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    & > div {
+        background-color: #fff;
+        // margin: 12px;
+        padding: 12px;
+        height: 100%;
+    }
+
+    &.visible {
+        opacity: 1;
+    }
+}

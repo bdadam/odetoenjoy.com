@@ -1,12 +1,14 @@
 .video-player {
-    max-height: 70vh;
-    position: relative;
-
     & > div {
-        content: '';
-        display: block;
         position: relative;
-        padding-top: 56.25%;
+        max-height: 70vh;
+
+        &::before {
+            content: '';
+            display: block;
+            position: relative;
+            padding-top: 56.25%;
+        }
     }
 
     iframe {

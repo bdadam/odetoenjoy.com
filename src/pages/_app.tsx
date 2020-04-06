@@ -38,6 +38,7 @@ function App({ Component, pageProps }: AppProps) {
                     <Component {...pageProps} />
                 </div>
                 <SiteFooter />
+                <div className="modal-container"></div>
             </div>
         </>
     );

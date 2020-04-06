@@ -72,7 +72,7 @@ export const init = (videoId: string, iframe: HTMLIFrameElement) => {
         },
         hide: () => {
             // iframe.hidden = true;
-            iframe.parentElement!.hidden = true;
+            iframe.parentElement!.parentElement!.hidden = true;
             sendCommand(iframe, { event: 'command', func: 'stopVideo' });
         },
     };

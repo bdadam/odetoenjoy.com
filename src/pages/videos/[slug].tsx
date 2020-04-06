@@ -38,10 +38,9 @@ const VideoPage: NextPage<{ video: Video; toplist: Video[] }> = ({ video, toplis
         <>
             <VideoPlayer url={video.embedUrl} img={video.image} />
             <div className="content">
+                <ShareButtons title={video.title} url={`https://www.odetoenjoy.com/videos/${video.slug}`} />
                 <h1 className="video-title">{video.title}</h1>
                 <div>{video.description}</div>
-
-                <ShareButtons title={video.title} url={`https://www.odetoenjoy.com/videos/${video.slug}`} />
             </div>
             <div className="sidebar">
                 <LikeBox />
