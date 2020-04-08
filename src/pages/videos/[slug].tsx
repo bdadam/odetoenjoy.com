@@ -23,7 +23,7 @@ import ShareButtons from '../../components/ShareButtons/ShareButtons';
 //     );
 // };
 
-const VideoPage: NextPage<{ video: Video; toplist: Video[] }> = ({ video, toplist }) => {
+const VideoPage: NextPage<{ video: Video; toplist: Video[]; allVideos: Video[] }> = ({ video, toplist, allVideos }) => {
     // return (
     //     <Page meta={{ title: props.title, description: '', canonicalPath: '/a/b/c' }}>
     //         <VideoPlayer url={props.embedUrl} img={props.image} />
@@ -40,7 +40,10 @@ const VideoPage: NextPage<{ video: Video; toplist: Video[] }> = ({ video, toplis
             <div className="content">
                 <ShareButtons title={video.title} url={`https://www.odetoenjoy.com/videos/${video.slug}`} />
                 <h1 className="video-title">{video.title}</h1>
-                <div>{video.description}</div>
+                <div className="video-description">{video.description}</div>
+                <hr />
+                {/* <h2>More videos</h2> */}
+                <VideoItems videos={allVideos} />
             </div>
             <div className="sidebar">
                 <LikeBox />
@@ -61,21 +64,28 @@ const VideoPage: NextPage<{ video: Video; toplist: Video[] }> = ({ video, toplis
 
 export default VideoPage;
 
-export const getStaticProps: GetStaticProps = async ctx => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
+    function shuffle(a: object[]) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
     const slug = ctx.params!.slug;
 
     const videos = await findAllVideos();
-    const video = videos.find(v => v.slug === slug)!;
+    const video = videos.find((v) => v.slug === slug)!;
 
     const toplist = [
-        videos.find(v => v.slug === 'chicago-symphony-orchestra-with-riccardo-muti-beethoven-s-9th-symphony')!,
-        videos.find(v => v.slug === 'ode-to-joy-rock-version-nobel-peace-prize-award-ceremony-2012')!,
-        videos.find(v => v.slug === 'ode-to-joy-flashmob-at-plaza-sabadel-spain')!,
-        videos.find(v => v.slug === 'albano-carrisi-aka-al-bano-canto-alla-gioia')!,
-        videos.find(v => v.slug === 'joyful-joyful-we-adore-thee')!,
+        videos.find((v) => v.slug === 'chicago-symphony-orchestra-with-riccardo-muti-beethoven-s-9th-symphony')!,
+        videos.find((v) => v.slug === 'ode-to-joy-rock-version-nobel-peace-prize-award-ceremony-2012')!,
+        videos.find((v) => v.slug === 'ode-to-joy-flashmob-at-plaza-sabadel-spain')!,
+        videos.find((v) => v.slug === 'albano-carrisi-aka-al-bano-canto-alla-gioia')!,
+        videos.find((v) => v.slug === 'joyful-joyful-we-adore-thee')!,
     ];
 
-    return { props: { video, toplist } };
+    return { props: { video, toplist, allVideos: shuffle([...videos]) } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -83,6 +93,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     return {
         fallback: false,
-        paths: videos.map(v => ({ params: { slug: v.slug } })),
+        paths: videos.map((v) => ({ params: { slug: v.slug } })),
     };
 };
