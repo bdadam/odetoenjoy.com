@@ -9,11 +9,10 @@ display_url: https://odetoenjoy.com
 media_folder: 'public/uploads'
 public_folder: '/uploads'
 
-editor:
-  preview: false
-
 collections:
   - name: 'video'
+    editor:
+      preview: false
     label: 'Video'
     folder: 'content/videos'
     create: true
