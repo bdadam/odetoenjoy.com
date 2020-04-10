@@ -1,9 +1,17 @@
 export type Video = {
     title: string;
+    slug: string;
     embedUrl: string;
     description: string;
-    slug: string;
+    tags: string[];
     image: string;
+    thumbnail: string;
+    duration: string;
+};
+
+export type VideoLink = {
+    title: string;
+    url: string;
     thumbnail: string;
     duration: string;
 };

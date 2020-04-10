@@ -8,7 +8,7 @@ import VideoPlayer from '../../components/VideoPlayer';
 import LikeBox from '../../components/LikeBox/LikeBox';
 import VideoItems from '../../components/VideoItems/VideoItems';
 import ShareButtons from '../../components/ShareButtons/ShareButtons';
-
+import VideoTags from '../../components/VideoTags/VideoTags';
 // const Page = props => {
 //     return (
 //         <>
@@ -38,10 +38,11 @@ const VideoPage: NextPage<{ video: Video; toplist: Video[]; allVideos: Video[] }
         <>
             <VideoPlayer url={video.embedUrl} img={video.image} />
             <div className="content">
-                <ShareButtons title={video.title} url={`https://www.odetoenjoy.com/videos/${video.slug}`} />
                 <h1 className="video-title">{video.title}</h1>
+                <ShareButtons title={video.title} url={`https://www.odetoenjoy.com/videos/${video.slug}`} />
                 <div className="video-description">{video.description}</div>
-                <hr />
+                <VideoTags tags={video.tags} />
+                {/* <hr /> */}
                 {/* <h2>More videos</h2> */}
                 <VideoItems videos={allVideos} />
             </div>
