@@ -1,6 +1,6 @@
 import { useEffect, createRef } from 'react';
 
-import './VideoPlayer.less';
+import './VideoPlayer.module.css';
 
 import * as YoutubeController from '../services/youtube-player-iframe-controller';
 

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import classnames from 'classnames';
 
-import './VideoItems.less';
+import styles from './VideoItems.module.css';
 
 type Video = {
     title: string;
@@ -12,8 +12,9 @@ type Video = {
 
 const VideoItems: React.FC<{ videos: Video[]; modifier?: 'small' }> = ({ videos, modifier }) => {
     return (
-        <ul className={classnames('video-items', { 'video-items--small': modifier === 'small' })}>
-            {videos.map(v => (
+        // <ul className={classnames('video-items', { 'video-items--small': modifier === 'small' })}>
+        <ul className={classnames(styles.videoItems, { [styles.videoItemsSmall]: modifier === 'small' })}>
+            {videos.map((v) => (
                 <li key={v.slug} className="video-item">
                     <Link href="/videos/[slug]" as={`/videos/${v.slug}`}>
                         <a className="video-item__card">

@@ -1,8 +1,4 @@
-.share-buttons {
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-evenly;
-    // width: 100%;
+/* .share-buttons {
     margin-bottom: 20px;
     display: flex;
     flex-direction: row;
@@ -28,7 +24,7 @@
     }
 }
 
-.share-button(@bgcolor) {
+.share-button {
     color: #fff;
     background-color: @bgcolor;
     display: inline-block;
@@ -37,33 +33,33 @@
     padding: 8px 12px;
     border: 0;
     line-height: 24px;
+}
 
-    &:not(:last-child) {
-        margin-right: 12px;
-    }
+.share-button:not(:last-child) {
+    margin-right: 12px;
+}
 
-    span {
-        vertical-align: middle;
-    }
+.share-button span {
+    vertical-align: middle;
+}
 
-    svg {
-        @media (min-width: 1024px) {
-            margin-right: 8px;
-        }
-        width: 24px;
-        height: 24px;
-        vertical-align: middle;
-        color: currentColor;
-        fill: currentColor;
+.share-button svg {
+    @media (min-width: 1024px) {
+        margin-right: 8px;
     }
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    color: currentColor;
+    fill: currentColor;
+}
 
-    &:hover {
-        background-color: darken(@bgcolor, 10%);
-    }
+.share-button:hover {
+    background-color: darken(@bgcolor, 10%);
+}
 
-    &:active {
-        background-color: darken(@bgcolor, 20%);
-    }
+.share-button:active {
+    background-color: darken(@bgcolor, 20%);
 }
 
 .share-button--fb {
@@ -92,4 +88,4 @@
 
 .share-button--main {
     .share-button(#911440);
-}
+} */

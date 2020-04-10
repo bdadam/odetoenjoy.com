@@ -1,12 +1,12 @@
 import Link from 'next/link';
 
-import './SiteHeader.less';
+import styles from './SiteHeader.module.css';
 
 import Logo from '../icons/Logo';
 
 export default () => {
     return (
-        <header className="site-header">
+        <header className={styles.siteHeader}>
             <nav>
                 {/* <Link href="/">
                     <a className="site-logo"></a>

@@ -1,9 +1,9 @@
-import './SiteFooter.less';
+import styles from './SiteFooter.module.css';
 import Link from 'next/link';
 
 export default () => {
     return (
-        <footer className="site-footer">
+        <footer className={styles.siteFooter}>
             odetoenjoy.com &copy; {new Date().getFullYear()}
             <br />
             <Link href="/about" as="/about/">

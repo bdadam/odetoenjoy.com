@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 
 // import ReactModal from 'react-modal';
 
-import Modal from '../Modal/Modal';
+// import Modal from '../Modal/Modal';
 
-import './ShareButtons.less';
+import styles from './ShareButtons.module.css';
 
 type Props = {
     title: string;
@@ -32,7 +32,7 @@ const ShareButtons: React.FC<Props> = ({ title, url }) => {
 
     return (
         <>
-            <div className="share-buttons">
+            <div className={styles.shareButtons}>
                 {/* <span className="share-this">Share</span> */}
                 <a
                     href={`http://www.facebook.com/sharer/sharer.php?u=${encode(url)}`}
@@ -92,9 +92,9 @@ const ShareButtons: React.FC<Props> = ({ title, url }) => {
 
                 {modalVisible && (
                     <div className="share-buttons">
-                        <Modal>
+                        {/* <Modal>
                             <div>Blubb blibb blabb</div>
-                        </Modal>
+                        </Modal> */}
                         <h4>Social</h4>
                         <a
                             href={`http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`}
@@ -147,7 +147,7 @@ const ShareButtons: React.FC<Props> = ({ title, url }) => {
                             readOnly={true}
                             value={url}
                             className="video-link"
-                            onClick={e => (e.target as HTMLInputElement).select()}
+                            onClick={(e) => (e.target as HTMLInputElement).select()}
                         />
                         <button className="share-button--copy" onClick={() => navigator.clipboard.writeText(`${url}`)}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">

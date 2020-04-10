@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 
-import './default.less';
+import '../styles/reset.css';
+import './default.css';
+import '../styles/layout.css';
 
 import SiteHeader from '../components/SiteHeader/SiteHeader';
 import SiteFooter from '../components/SiteFooter/SiteFooter';

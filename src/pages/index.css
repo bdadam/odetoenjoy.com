@@ -1,0 +1,8 @@
+@media (min-width: 1024px) {
+    .lyrics-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+}

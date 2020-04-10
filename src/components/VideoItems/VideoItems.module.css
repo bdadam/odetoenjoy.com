@@ -1,9 +1,5 @@
-.video-items {
+.videoItems {
     list-style: none;
-    // background-color: #fff;
-    // margin: -12px;
-    // padding: 12px;
-    // background: #711;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;

@@ -1,7 +1,3 @@
-@import '../styles/reset';
-@import '../styles/utils';
-@import '../styles/layout';
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -16,9 +12,8 @@ body {
     font-family: 'Baloo Thambi 2', cursive;
 }
 
-.btn-primary {
-    @btn-color: #f90038;
-    background-color: @btn-color;
+/* .btn-primary {
+    background-color: #f90038;
     display: inline-block;
     color: #fff;
     text-align: center;
@@ -33,13 +28,13 @@ body {
     transition: all 0.2s ease-in-out;
 
     &:hover {
-        background-color: darken(@btn-color, 10%);
+        background-color: darken(#f90038, 10%);
     }
 
     &:active {
-        background-color: darken(@btn-color, 20%);
+        background-color: darken(#f90038, 20%);
     }
-}
+} */
 
 .image-169 {
     padding-top: 56.25%;
@@ -69,29 +64,13 @@ body {
     display: block;
     text-decoration: none;
     color: #333;
-    // border-radius: 3px;
-    // box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14),
-    //     0px 0px 0px 0px rgba(0, 0, 0, 0.12);
-    // border-radius: 4px;
-    // background-color: #fff;
-    // padding-bottom: 16px;
-    // overflow: hidden;
+}
+.video-grid-item .image-169 {
+    margin-bottom: 12px;
+}
 
-    // .card-content {
-    //     padding-top: 16px;
-    //     padding-left: 16px;
-    //     padding-right: 16px;
-    // }
-
-    .image-169 {
-        margin-bottom: 12px;
-    }
-
-    &:hover {
-        .title {
-            text-decoration: underline;
-        }
-    }
+.video-grid-item:hover .title {
+    text-decoration: underline;
 }
 
 .page-title {
