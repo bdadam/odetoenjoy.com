@@ -6,7 +6,7 @@ export default () => {
         <footer className="site-footer">
             odetoenjoy.com &copy; {new Date().getFullYear()}
             <br />
-            <Link href="/about" as="/about/">
+            <Link href="/about" as="/about">
                 <a>About us</a>
             </Link>
             <p>It is important to enjoy life.</p>
