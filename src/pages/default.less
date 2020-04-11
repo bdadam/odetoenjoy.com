@@ -16,101 +16,30 @@ body {
     font-family: 'Baloo Thambi 2', cursive;
 }
 
-.btn-primary {
-    @btn-color: #f90038;
-    background-color: @btn-color;
-    display: inline-block;
-    color: #fff;
-    text-align: center;
-    padding: 10px 16px;
+// .btn-primary {
+//     @btn-color: #f90038;
+//     background-color: @btn-color;
+//     display: inline-block;
+//     color: #fff;
+//     text-align: center;
+//     padding: 10px 16px;
 
-    user-select: none;
-    appearance: none;
-    border: 0;
-    border-radius: 4px;
-    font-weight: bold;
-    line-height: 1;
-    transition: all 0.2s ease-in-out;
+//     user-select: none;
+//     appearance: none;
+//     border: 0;
+//     border-radius: 4px;
+//     font-weight: bold;
+//     line-height: 1;
+//     transition: all 0.2s ease-in-out;
 
-    &:hover {
-        background-color: darken(@btn-color, 10%);
-    }
+//     &:hover {
+//         background-color: darken(@btn-color, 10%);
+//     }
 
-    &:active {
-        background-color: darken(@btn-color, 20%);
-    }
-}
-
-.image-169 {
-    padding-top: 56.25%;
-    height: 0;
-    position: relative;
-    background-size: cover;
-}
-
-.video-grid {
-    display: grid;
-    list-style: none;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-
-    @media (min-width: 1024px) {
-        gap: 28px;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    @media (min-width: 1100px) {
-        gap: 28px;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-}
-
-.video-grid-item {
-    display: block;
-    text-decoration: none;
-    color: #333;
-    // border-radius: 3px;
-    // box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14),
-    //     0px 0px 0px 0px rgba(0, 0, 0, 0.12);
-    // border-radius: 4px;
-    // background-color: #fff;
-    // padding-bottom: 16px;
-    // overflow: hidden;
-
-    // .card-content {
-    //     padding-top: 16px;
-    //     padding-left: 16px;
-    //     padding-right: 16px;
-    // }
-
-    .image-169 {
-        margin-bottom: 12px;
-    }
-
-    &:hover {
-        .title {
-            text-decoration: underline;
-        }
-    }
-}
-
-.page-title {
-    font-weight: normal;
-    font-size: 1.125rem;
-    line-height: 1.333;
-}
-
-.video-title {
-    font-weight: normal;
-    font-size: 1.125rem;
-    line-height: 1.333;
-    margin-top: 12px;
-    margin-bottom: 20px;
-}
-
-.video-description {
-    white-space: pre-wrap;
-}
+//     &:active {
+//         background-color: darken(@btn-color, 20%);
+//     }
+// }
 
 hr {
     margin: 32px 0;

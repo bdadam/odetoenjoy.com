@@ -23,7 +23,9 @@ import VideoTags from '../../components/VideoTags/VideoTags';
 //     );
 // };
 
-const VideoPage: NextPage<{ video: Video; toplist: Video[]; allVideos: Video[] }> = ({ video, toplist, allVideos }) => {
+type VideoPageProps = { video: Video; toplist: Video[]; allVideos: Video[] };
+
+const VideoPage: NextPage<VideoPageProps> = ({ video, toplist, allVideos }) => {
     // return (
     //     <Page meta={{ title: props.title, description: '', canonicalPath: '/a/b/c' }}>
     //         <VideoPlayer url={props.embedUrl} img={props.image} />
@@ -38,10 +40,13 @@ const VideoPage: NextPage<{ video: Video; toplist: Video[]; allVideos: Video[] }
         <>
             <VideoPlayer url={video.embedUrl} img={video.image} />
             <div className="content">
-                <h1 className="video-title">{video.title}</h1>
+                {/* <iframe src="https://youtube.com/embed/cdwal5Kw3Fc?enablejsapi=1&modestbranding=1" /> */}
+                <h1 className="headline-1 mb-12 mt-12">{video.title}</h1>
                 <ShareButtons title={video.title} url={`https://www.odetoenjoy.com/videos/${video.slug}`} />
-                <div className="video-description">{video.description}</div>
-                <VideoTags tags={video.tags} />
+                <div className="whitespace-pre-wrap mb-12">{video.description}</div>
+                <div className="mb-12">
+                    <VideoTags tags={video.tags} />
+                </div>
                 {/* <hr /> */}
                 {/* <h2>More videos</h2> */}
                 <VideoItems videos={allVideos} />
@@ -65,8 +70,8 @@ const VideoPage: NextPage<{ video: Video; toplist: Video[]; allVideos: Video[] }
 
 export default VideoPage;
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
-    function shuffle(a: object[]) {
+export const getStaticProps: GetStaticProps<VideoPageProps> = async (ctx) => {
+    function shuffle<P>(a: P[]) {
         for (let i = a.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [a[i], a[j]] = [a[j], a[i]];
