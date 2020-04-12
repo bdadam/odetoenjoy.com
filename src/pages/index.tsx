@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import { NextPageContext, GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 
 import './index.less';
 
@@ -11,6 +10,7 @@ import findAllVideos from '../services/find-all-videos';
 import readLyrics from '../services/read-lyrics';
 
 type HomePageProps = {
+    pagename: 'home';
     videos: Video[];
     lyrics: {
         de: string;
@@ -34,7 +34,12 @@ const Home: React.FC<HomePageProps> = ({ videos, lyrics }) => {
                 <link rel="canonical" href="https://www.odetoenjoy.com/" />
             </Head>
 
-            <h1 className="page-title headline-1">Variations on Beethoven's Ode to Joy</h1>
+            <div className="hero-container mb-12 lg:mb-20">
+                <h1 className="page-title headline-1" style={{ color: '#fff', backgroundColor: 'rgba(0,0,0,0.3)' }}>
+                    Variations on Beethoven's Ode to Joy
+                </h1>
+            </div>
+
             <div className="content mb-20 lg:mb-0">
                 <VideoItems videos={videos} />
 
@@ -89,5 +94,5 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async (ctx) => {
     //     videos.find((v) => v.slug === 'joyful-joyful-we-adore-thee'),
     // ] as Video[];
 
-    return { props: { videos, lyrics: { de: lyrics[0].html, en: lyrics[1].html } } };
+    return { props: { pagename: 'home', videos, lyrics: { de: lyrics[0].html, en: lyrics[1].html } } };
 };

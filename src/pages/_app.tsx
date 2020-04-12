@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 
+import classnames from 'classnames';
+
 import './default.less';
 
 import SiteHeader from '../components/SiteHeader/SiteHeader';
@@ -13,7 +15,6 @@ function App({ Component, pageProps }: AppProps) {
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta property="fb:app_id" content="1771654119806913" />
-                {/* <link rel="icon" href="/logo-plain.svg" /> */}
                 <link
                     href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2:400,600&display=swap&subset=latin-ext"
                     rel="stylesheet"
@@ -26,10 +27,10 @@ function App({ Component, pageProps }: AppProps) {
                 <meta name="msapplication-TileColor" content="#ffc40d" />
                 <meta name="theme-color" content="#fffda6" />
             </Head>
-            <div className="app">
+            <div className={classnames('app', `page-${pageProps.pagename}`)}>
                 <SiteHeader />
                 <div className="app-content">
-                    <div className="video-player youtube-player" hidden>
+                    <div className="video-player youtube-player" hidden key={'youtube-iframe'}>
                         <div>
                             <iframe
                                 frameBorder="0"

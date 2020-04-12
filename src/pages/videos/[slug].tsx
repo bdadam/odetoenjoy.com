@@ -23,7 +23,7 @@ import VideoTags from '../../components/VideoTags/VideoTags';
 //     );
 // };
 
-type VideoPageProps = { video: Video; toplist: Video[]; allVideos: Video[] };
+type VideoPageProps = { pagename: 'video'; video: Video; toplist: Video[]; allVideos: Video[] };
 
 const VideoPage: NextPage<VideoPageProps> = ({ video, toplist, allVideos }) => {
     // return (
@@ -94,7 +94,7 @@ export const getStaticProps: GetStaticProps<VideoPageProps> = async (ctx) => {
         videos.find((v) => v.slug === 'joyful-joyful-we-adore-thee')!,
     ];
 
-    return { props: { video, toplist, allVideos: shuffle([...videos]) } };
+    return { props: { pagename: 'video', video, toplist, allVideos: shuffle([...videos]) } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
