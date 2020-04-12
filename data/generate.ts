@@ -9,6 +9,8 @@ const files = fs.readdirSync(BASE_DIR);
 type Video = {
     title: string;
     video: string;
+    image: string;
+    thumbnail: string;
     durationSeconds: number;
     durationFormatted: string;
     description: string;
@@ -63,8 +65,10 @@ function readVideosFromMdFiles() {
             // alternativeVideos: x.data.alternativeVideos,
             artists: x.data.artists,
 
-            duration: '',
+            durationFormatted: '',
             durationSeconds: 0,
+            image: '',
+            thumbnail: '',
         };
     });
     return videos;
@@ -89,9 +93,32 @@ function formatDuration(seconds: number) {
 
 import got from 'got';
 // const got = (url) => Promise.resolve({ body: 'x' });
-import { JSDOM } from 'jsdom';
+import { JSDOM, DOMWindow } from 'jsdom';
 
 import parseIsoDuration from 'parse-iso-duration';
+
+function parseDuration(win: DOMWindow) {
+    try {
+        const doc = win.document;
+        const dur = doc.querySelector('meta[itemprop="duration"]')?.getAttribute('content');
+        const durationSeconds = dur ? parseIsoDuration(dur!) / 1000 : 0;
+        const durationFormatted = formatDuration(durationSeconds);
+
+        return { durationSeconds, durationFormatted };
+    } catch (e) {
+        console.error('Error retrieving duration', window.location.href);
+
+        return { durationSeconds: 0, durationFormatted: '' };
+    }
+}
+
+async function getImages(win: DOMWindow, slug: string) {
+    const doc = win.document;
+    const img = doc.querySelector('meta[property="og:image"]')?.getAttribute('content');
+
+    // TODO: fix this
+    return { image: '', thumbnail: '' };
+}
 
 async function grabDataFromVideoPage(video: Video): Promise<Video> {
     const cacheDir = '.cache/crawl-response';
@@ -105,14 +132,9 @@ async function grabDataFromVideoPage(video: Video): Promise<Video> {
     }
 
     const dom = new JSDOM(responseBody);
-    const doc = dom.window.document;
 
-    const image = doc.querySelector('meta[property="og:image"]')?.getAttribute('content');
-    const dur = doc.querySelector('meta[itemprop="duration"]')?.getAttribute('content');
-    const durationSeconds = dur ? parseIsoDuration(dur!) / 1000 : 0;
-    const durationFormatted = formatDuration(durationSeconds);
-
-    return { ...video, durationSeconds, durationFormatted };
+    // TODO: add image and thumbnail
+    return { ...video, ...parseDuration(dom.window), ...(await getImages(dom.window, video.slug)) };
 }
 
 (async () => {
