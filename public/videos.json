@@ -51,8 +51,8 @@
         "tags": [],
         "slug": "beethoven-s-9th-symphony",
         "quality": -1,
-        "durationFormatted": "1:05:39",
-        "durationSeconds": 3939,
+        "durationFormatted": "0:00",
+        "durationSeconds": 0,
         "image": {
             "url": "/videoimages/beethoven-s-9th-symphony-b34a73-original.jpg",
             "width": 480,
@@ -304,17 +304,17 @@
         "tags": [],
         "slug": "ode-to-joyous-flight-sky-fighters-les-chevaliers-du-ciel",
         "quality": -1,
-        "durationFormatted": "0:00",
-        "durationSeconds": 0,
+        "durationFormatted": "4:49",
+        "durationSeconds": 289,
         "image": {
-            "url": "https://via.placeholder.com/1280x720",
-            "width": 1280,
-            "height": 720
+            "url": "/videoimages/ode-to-joyous-flight-sky-fighters-les-chevaliers-du-ciel-8aeb3e-original.jpg",
+            "width": 480,
+            "height": 360
         },
         "thumbnail": {
-            "url": "https://via.placeholder.com/480x270",
+            "url": "/videoimages/ode-to-joyous-flight-sky-fighters-les-chevaliers-du-ciel-8aeb3e-original.jpg",
             "width": 480,
-            "height": 270
+            "height": 360
         }
     },
     {

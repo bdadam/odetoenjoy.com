@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 
-import { Video } from 'types';
+import { Video } from 'data/types';
 
 import findAllVideos from '../../services/find-all-videos';
 import VideoPlayer from '../../components/VideoPlayer';
@@ -38,7 +38,10 @@ const VideoPage: NextPage<VideoPageProps> = ({ video, toplist, allVideos }) => {
 
     return (
         <>
-            <VideoPlayer url={video.embedUrl} img={video.image} />
+            <VideoPlayer
+                url={video.video.replace('https://www.youtube.com/watch?v=', 'https://www.youtube.com/embed/')}
+                img={video.image.url}
+            />
             <div className="content">
                 {/* <iframe src="https://youtube.com/embed/cdwal5Kw3Fc?enablejsapi=1&modestbranding=1" /> */}
                 <h1 className="headline-1 mb-12 mt-12">{video.title}</h1>
@@ -58,7 +61,7 @@ const VideoPage: NextPage<VideoPageProps> = ({ video, toplist, allVideos }) => {
 
             <Head>
                 <title>
-                    {video.title} ({video.duration})
+                    {video.title} ({video.durationFormatted})
                 </title>
                 <meta name="description" content={video.description} />
                 <link rel="canonical" href={`https://www.odetoenjoy.com/videos/${video.slug}`} />

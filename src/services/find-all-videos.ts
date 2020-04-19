@@ -1,19 +1,9 @@
 import fs from 'fs-extra';
-// import Datastore from 'nedb-promises';
 
-import { Video } from 'types';
-
-// const db = Datastore.create({ filename: 'content/videos.nedb' });
+import { Video } from 'data/types';
 
 export default async () => {
-    // const videos = await db.find<Video>({});
-
-    const content = fs.readFileSync('content/videos.nedb', 'utf-8');
-    // content.split('\n').forEach((l) => console.log(l));
-    const videos: Video[] = content
-        .split('\n')
-        .filter((l) => l)
-        .map((line) => JSON.parse(line));
+    const videos: Video[] = fs.readJSONSync('public/videos.min.json');
 
     return videos;
 };

@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next';
 
 import './index.less';
 
-import { Video } from 'types';
+import { Video } from 'data/types';
 
 import findAllVideos from '../services/find-all-videos';
 import readLyrics from '../services/read-lyrics';

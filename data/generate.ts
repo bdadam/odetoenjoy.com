@@ -135,8 +135,8 @@ async function grabDataFromVideoPage(video: Video): Promise<Video> {
     // console.log(videosWithDurationAndImage);
 
     console.log('Writing json files');
-    fs.writeFileSync('content/videos.json', JSON.stringify(videosWithDurationAndImage, null, 4));
-    fs.writeFileSync('content/videos.min.json', JSON.stringify(videosWithDurationAndImage));
+    fs.writeFileSync('public/videos.json', JSON.stringify(videosWithDurationAndImage, null, 4));
+    fs.writeFileSync('public/videos.min.json', JSON.stringify(videosWithDurationAndImage));
 
     console.log('Done.');
 })();

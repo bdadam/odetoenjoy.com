@@ -7,8 +7,8 @@ export type Image = {
 export type Video = {
     title: string;
     video: string;
-    image?: Image;
-    thumbnail?: Image;
+    image: Image;
+    thumbnail: Image;
     durationSeconds: number;
     durationFormatted: string;
     description: string;
