@@ -4,7 +4,7 @@ import speakingurl from 'speakingurl';
 
 const BASE_DIR = 'content/videos';
 
-import { Video } from '../types';
+import { Video, Image } from '../types';
 
 type VideoMatter = Partial<Omit<Video, 'description'>>;
 
@@ -14,6 +14,12 @@ type VideoMd = {
 };
 
 type ValidVideoMd = VideoMd & { data: { title: string; video: string } };
+
+const defaultImage: Image = {
+    url: '',
+    width: 0,
+    height: 0,
+};
 
 function isValidVideoMd(md: VideoMd): md is ValidVideoMd {
     if (!md.data.title || md.data.title.length < 10) {
@@ -53,8 +59,8 @@ function readVideosFromMdFiles() {
 
             durationFormatted: '',
             durationSeconds: 0,
-            image: undefined,
-            thumbnail: undefined,
+            image: defaultImage,
+            thumbnail: defaultImage,
         };
     });
     return videos;
