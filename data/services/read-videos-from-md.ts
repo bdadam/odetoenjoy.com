@@ -2,7 +2,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import speakingurl from 'speakingurl';
 
-const BASE_DIR = 'content/temp-videos-2';
+const BASE_DIR = 'content/videos';
 
 import { Video } from '../types';
 

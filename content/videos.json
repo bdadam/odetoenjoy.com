@@ -9,9 +9,18 @@
         ],
         "slug": "albano-carrisi-aka-al-bano-canto-alla-gioia",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "5:03",
         "durationSeconds": 303,
-        "durationFormatted": "5:03"
+        "image": {
+            "url": "/videoimages/albano-carrisi-aka-al-bano-canto-alla-gioia-a37cf2-original.jpg",
+            "width": 480,
+            "height": 360
+        },
+        "thumbnail": {
+            "url": "/videoimages/albano-carrisi-aka-al-bano-canto-alla-gioia-a37cf2-original.jpg",
+            "width": 480,
+            "height": 360
+        }
     },
     {
         "featured": false,
@@ -21,9 +30,18 @@
         "tags": [],
         "slug": "ana-rucner-ode-to-joy-rock-version",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "4:32",
         "durationSeconds": 272,
-        "durationFormatted": "4:32"
+        "image": {
+            "url": "/videoimages/ana-rucner-ode-to-joy-rock-version-f0f10d-original.jpg",
+            "width": 480,
+            "height": 360
+        },
+        "thumbnail": {
+            "url": "/videoimages/ana-rucner-ode-to-joy-rock-version-f0f10d-original.jpg",
+            "width": 480,
+            "height": 360
+        }
     },
     {
         "featured": false,
@@ -33,9 +51,18 @@
         "tags": [],
         "slug": "beethoven-s-9th-symphony",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "1:05:39",
         "durationSeconds": 3939,
-        "durationFormatted": "1:05:39"
+        "image": {
+            "url": "/videoimages/beethoven-s-9th-symphony-b34a73-original.jpg",
+            "width": 480,
+            "height": 360
+        },
+        "thumbnail": {
+            "url": "/videoimages/beethoven-s-9th-symphony-b34a73-original.jpg",
+            "width": 480,
+            "height": 360
+        }
     },
     {
         "featured": false,
@@ -46,7 +73,8 @@
             "symphony",
             "full",
             "orchestra",
-            "9th-symphony"
+            "9th-symphony",
+            "symphonic"
         ],
         "slug": "chicago-symphony-orchestra-with-riccardo-muti-beethoven-s-9th-symphony",
         "quality": 5,
@@ -60,9 +88,18 @@
                 "type": "conductor"
             }
         ],
-        "duration": "",
+        "durationFormatted": "1:21:23",
         "durationSeconds": 4883,
-        "durationFormatted": "1:21:23"
+        "image": {
+            "url": "/videoimages/chicago-symphony-orchestra-with-riccardo-muti-beethoven-s-9th-symphony-d1a8f6-360.jpg",
+            "width": 1280,
+            "height": 720
+        },
+        "thumbnail": {
+            "url": "/videoimages/chicago-symphony-orchestra-with-riccardo-muti-beethoven-s-9th-symphony-d1a8f6-360.jpg",
+            "width": 1280,
+            "height": 720
+        }
     },
     {
         "featured": false,
@@ -74,9 +111,18 @@
         ],
         "slug": "flashmob-in-peschiera-del-garda",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "8:41",
         "durationSeconds": 521,
-        "durationFormatted": "8:41"
+        "image": {
+            "url": "/videoimages/flashmob-in-peschiera-del-garda-bd0bc0-original.jpg",
+            "width": 480,
+            "height": 360
+        },
+        "thumbnail": {
+            "url": "/videoimages/flashmob-in-peschiera-del-garda-bd0bc0-original.jpg",
+            "width": 480,
+            "height": 360
+        }
     },
     {
         "featured": false,
@@ -86,9 +132,18 @@
         "tags": [],
         "slug": "heavenly-ode-to-joy-metal-version",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "4:55",
         "durationSeconds": 295,
-        "durationFormatted": "4:55"
+        "image": {
+            "url": "/videoimages/heavenly-ode-to-joy-metal-version-b844fd-original.jpg",
+            "width": 480,
+            "height": 360
+        },
+        "thumbnail": {
+            "url": "/videoimages/heavenly-ode-to-joy-metal-version-b844fd-original.jpg",
+            "width": 480,
+            "height": 360
+        }
     },
     {
         "featured": false,
@@ -100,9 +155,18 @@
         ],
         "slug": "inno-alla-gioia-italian-children-singing-ode-to-joy",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "1:57",
         "durationSeconds": 117,
-        "durationFormatted": "1:57"
+        "image": {
+            "url": "/videoimages/inno-alla-gioia-italian-children-singing-ode-to-joy-b81851-original.jpg",
+            "width": 480,
+            "height": 360
+        },
+        "thumbnail": {
+            "url": "/videoimages/inno-alla-gioia-italian-children-singing-ode-to-joy-b81851-original.jpg",
+            "width": 480,
+            "height": 360
+        }
     },
     {
         "featured": false,
@@ -112,9 +176,18 @@
         "tags": [],
         "slug": "joyful-joyful-we-adore-thee-at-royal-albert-hall-london",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "3:01",
         "durationSeconds": 181,
-        "durationFormatted": "3:01"
+        "image": {
+            "url": "/videoimages/joyful-joyful-we-adore-thee-at-royal-albert-hall-london-f6fed1-original.jpg",
+            "width": 480,
+            "height": 360
+        },
+        "thumbnail": {
+            "url": "/videoimages/joyful-joyful-we-adore-thee-at-royal-albert-hall-london-f6fed1-original.jpg",
+            "width": 480,
+            "height": 360
+        }
     },
     {
         "featured": false,
@@ -124,9 +197,18 @@
         "tags": [],
         "slug": "joyful-joyful-we-adore-thee",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "3:16",
         "durationSeconds": 196,
-        "durationFormatted": "3:16"
+        "image": {
+            "url": "/videoimages/joyful-joyful-we-adore-thee-2fe589-original.jpg",
+            "width": 480,
+            "height": 360
+        },
+        "thumbnail": {
+            "url": "/videoimages/joyful-joyful-we-adore-thee-2fe589-original.jpg",
+            "width": 480,
+            "height": 360
+        }
     },
     {
         "featured": false,
@@ -136,9 +218,18 @@
         "tags": [],
         "slug": "ode-a-la-joie-l-hymne-europeen",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "2:31",
         "durationSeconds": 151,
-        "durationFormatted": "2:31"
+        "image": {
+            "url": "/videoimages/ode-a-la-joie-l-hymne-europeen-93724c-original.jpg",
+            "width": 480,
+            "height": 360
+        },
+        "thumbnail": {
+            "url": "/videoimages/ode-a-la-joie-l-hymne-europeen-93724c-original.jpg",
+            "width": 480,
+            "height": 360
+        }
     },
     {
         "featured": false,
@@ -150,9 +241,18 @@
         ],
         "slug": "ode-to-joy-flashmob-at-plaza-sabadel-spain",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "5:41",
         "durationSeconds": 341,
-        "durationFormatted": "5:41"
+        "image": {
+            "url": "/videoimages/ode-to-joy-flashmob-at-plaza-sabadel-spain-ce8cd1-360.jpg",
+            "width": 1280,
+            "height": 720
+        },
+        "thumbnail": {
+            "url": "/videoimages/ode-to-joy-flashmob-at-plaza-sabadel-spain-ce8cd1-360.jpg",
+            "width": 1280,
+            "height": 720
+        }
     },
     {
         "featured": false,
@@ -162,9 +262,18 @@
         "tags": [],
         "slug": "ode-to-joy-rock-version-nobel-peace-prize-award-ceremony-2012",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "3:01",
         "durationSeconds": 181,
-        "durationFormatted": "3:01"
+        "image": {
+            "url": "/videoimages/ode-to-joy-rock-version-nobel-peace-prize-award-ceremony-2012-649eb8-360.jpg",
+            "width": 1280,
+            "height": 720
+        },
+        "thumbnail": {
+            "url": "/videoimages/ode-to-joy-rock-version-nobel-peace-prize-award-ceremony-2012-649eb8-360.jpg",
+            "width": 1280,
+            "height": 720
+        }
     },
     {
         "featured": false,
@@ -174,21 +283,39 @@
         "tags": [],
         "slug": "ode-to-joy-with-german-and-korean-subtitles",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "2:35",
         "durationSeconds": 155,
-        "durationFormatted": "2:35"
+        "image": {
+            "url": "/videoimages/ode-to-joy-with-german-and-korean-subtitles-baad0d-360.jpg",
+            "width": 1280,
+            "height": 720
+        },
+        "thumbnail": {
+            "url": "/videoimages/ode-to-joy-with-german-and-korean-subtitles-baad0d-360.jpg",
+            "width": 1280,
+            "height": 720
+        }
     },
     {
         "featured": false,
         "title": "Ode to Joyous Flight (Sky Fighters/Les Chevaliers du Ciel)",
-        "video": "https://www.youtube.com/watch?v=T_VtgDfL3Eg",
+        "video": "https://www.youtube.com/watch?v=oiLCV_8_95o",
         "description": "",
         "tags": [],
         "slug": "ode-to-joyous-flight-sky-fighters-les-chevaliers-du-ciel",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "0:00",
         "durationSeconds": 0,
-        "durationFormatted": "0:00"
+        "image": {
+            "url": "https://via.placeholder.com/1280x720",
+            "width": 1280,
+            "height": 720
+        },
+        "thumbnail": {
+            "url": "https://via.placeholder.com/480x270",
+            "width": 480,
+            "height": 270
+        }
     },
     {
         "featured": false,
@@ -198,9 +325,18 @@
         "tags": [],
         "slug": "odin-s-court-ode-to-joy-progressive-metal",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "3:47",
         "durationSeconds": 227,
-        "durationFormatted": "3:47"
+        "image": {
+            "url": "/videoimages/odin-s-court-ode-to-joy-progressive-metal-5768f4-original.jpg",
+            "width": 480,
+            "height": 360
+        },
+        "thumbnail": {
+            "url": "/videoimages/odin-s-court-ode-to-joy-progressive-metal-5768f4-original.jpg",
+            "width": 480,
+            "height": 360
+        }
     },
     {
         "featured": false,
@@ -210,9 +346,18 @@
         "tags": [],
         "slug": "opera-babes-and-andre-rieu-ode-to-joy-2003",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "3:46",
         "durationSeconds": 226,
-        "durationFormatted": "3:46"
+        "image": {
+            "url": "/videoimages/opera-babes-and-andre-rieu-ode-to-joy-2003-ed7b84-original.jpg",
+            "width": 480,
+            "height": 360
+        },
+        "thumbnail": {
+            "url": "/videoimages/opera-babes-and-andre-rieu-ode-to-joy-2003-ed7b84-original.jpg",
+            "width": 480,
+            "height": 360
+        }
     },
     {
         "featured": false,
@@ -222,8 +367,17 @@
         "tags": [],
         "slug": "song-of-joy-miguel-rios",
         "quality": -1,
-        "duration": "",
+        "durationFormatted": "5:09",
         "durationSeconds": 309,
-        "durationFormatted": "5:09"
+        "image": {
+            "url": "/videoimages/song-of-joy-miguel-rios-86ff17-original.jpg",
+            "width": 480,
+            "height": 360
+        },
+        "thumbnail": {
+            "url": "/videoimages/song-of-joy-miguel-rios-86ff17-original.jpg",
+            "width": 480,
+            "height": 360
+        }
     }
 ]

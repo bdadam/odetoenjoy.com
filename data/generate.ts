@@ -2,27 +2,7 @@ import fs from 'fs-extra';
 
 import readVideosFromMdFiles from './services/read-videos-from-md';
 
-type Image = {
-    url: string;
-    width: number;
-    height: number;
-};
-
-type Video = {
-    title: string;
-    video: string;
-    image?: Image;
-    thumbnail?: Image;
-    durationSeconds: number;
-    durationFormatted: string;
-    description: string;
-    featured: boolean;
-    tags: string[];
-    slug: string;
-    quality: number;
-    // alternativeVideos?: string[];
-    artists?: [{ name: string; type: string }];
-};
+import { Image, Video } from './types';
 
 function formatDuration(seconds: number) {
     const secs = '' + (seconds % 60);
@@ -96,7 +76,7 @@ async function getImages(win: DOMWindow, slug: string): Promise<{ image: Image; 
     }
 
     const hash = crypto.createHash('md5').update(imgUrl!).digest('hex').substr(0, 6);
-    const imageBaseDir = `public/video-images2`;
+    const imageBaseDir = `public/videoimages`;
     fs.ensureDirSync(imageBaseDir);
 
     const imageFileOriginal = `${imageBaseDir}/${slug}-${hash}-original.jpg`;
