@@ -1,16 +1,18 @@
 import fs from 'fs-extra';
-import matter from 'gray-matter';
-import speakingurl from 'speakingurl';
 
-const BASE_DIR = 'content/temp-videos-2';
+import readVideosFromMdFiles from './services/read-videos-from-md';
 
-const files = fs.readdirSync(BASE_DIR);
+type Image = {
+    url: string;
+    width: number;
+    height: number;
+};
 
 type Video = {
     title: string;
     video: string;
-    image: string;
-    thumbnail: string;
+    image?: Image;
+    thumbnail?: Image;
     durationSeconds: number;
     durationFormatted: string;
     description: string;
@@ -22,58 +24,6 @@ type Video = {
     artists?: [{ name: string; type: string }];
 };
 
-type VideoMatter = Partial<Omit<Video, 'description'>>;
-
-type VideoMd = {
-    data: VideoMatter;
-    content: string;
-};
-
-type ValidVideoMd = VideoMd & { data: { title: string; video: string } };
-
-function isValidVideoMd(md: VideoMd): md is ValidVideoMd {
-    if (!md.data.title || md.data.title.length < 10) {
-        console.error('Invalid title for', md.data);
-        return false;
-    }
-
-    if (!md.data.video || !md.data.video.startsWith('https://www.youtube.com/watch?v=')) {
-        console.error('Only youtube is supported', md.data.slug);
-        return false;
-    }
-
-    return true;
-}
-
-function readVideosFromMdFiles() {
-    const rawMdVideos = files
-        .map((filename) => {
-            const raw = fs.readFileSync(`${BASE_DIR}/${filename}`, 'utf-8');
-            return matter(raw) as { data: VideoMatter; content: string };
-        })
-        .filter(isValidVideoMd);
-
-    const videos: Video[] = rawMdVideos.map((x) => {
-        return {
-            featured: !!x.data.featured,
-            title: x.data.title,
-            video: x.data.video,
-            description: x.content.trim(),
-            tags: x.data.tags ?? [],
-            slug: x.data.slug || speakingurl(x.data.title, { lang: 'en' }),
-            quality: x.data.quality ?? -1,
-            // alternativeVideos: x.data.alternativeVideos,
-            artists: x.data.artists,
-
-            durationFormatted: '',
-            durationSeconds: 0,
-            image: '',
-            thumbnail: '',
-        };
-    });
-    return videos;
-}
-
 function formatDuration(seconds: number) {
     const secs = '' + (seconds % 60);
     const mins = '' + (((seconds / 60) | 0) % 60);
@@ -82,17 +32,7 @@ function formatDuration(seconds: number) {
     return hrs > '0' ? `${hrs}:${mins.padStart(2, '0')}:${secs.padStart(2, '0')}` : `${mins}:${secs.padStart(2, '0')}`;
 }
 
-// const acquireImageForVideo = async (video: Video) => {
-//     // video.video
-// };
-
-// fs.writeFileSync('content/videos.json', JSON.stringify(videos, null, 4));
-// fs.writeFileSync('content/videos.min.json', JSON.stringify(videos));
-
-// videos.forEach(acquireImageForVideo);
-
 import got from 'got';
-// const got = (url) => Promise.resolve({ body: 'x' });
 import { JSDOM, DOMWindow } from 'jsdom';
 
 import parseIsoDuration from 'parse-iso-duration';
@@ -112,12 +52,79 @@ function parseDuration(win: DOMWindow) {
     }
 }
 
-async function getImages(win: DOMWindow, slug: string) {
-    const doc = win.document;
-    const img = doc.querySelector('meta[property="og:image"]')?.getAttribute('content');
+import sharp from 'sharp';
+import crypto from 'crypto';
 
-    // TODO: fix this
-    return { image: '', thumbnail: '' };
+const readOriginalImage = async (url: string, file: string) => {
+    if (fs.existsSync(file)) {
+        return fs.readFile(file);
+    }
+
+    const buffer = await got(url, { responseType: 'buffer', resolveBodyOnly: true });
+    fs.writeFileSync(file, buffer);
+
+    return buffer;
+};
+
+async function resizeImage(
+    image: Buffer,
+    width: number,
+    outFile: string,
+    quality = 70
+): Promise<{ width: number; height: number }> {
+    const img = sharp(image)
+        // .resize(width, Math.ceil((width / 16) * 9), { fit: 'cover' })
+        .resize(width)
+        .withMetadata()
+        .jpeg({ quality });
+    const meta = await img.metadata();
+
+    await fs.writeFile(outFile, await img.toBuffer());
+
+    return { width: meta.width!, height: meta.height! };
+}
+
+async function getImages(win: DOMWindow, slug: string): Promise<{ image: Image; thumbnail: Image }> {
+    const doc = win.document;
+    const imgUrl = doc.querySelector('meta[property="og:image"]')?.getAttribute('content');
+
+    if (!imgUrl) {
+        return {
+            image: { url: 'https://via.placeholder.com/1280x720', width: 1280, height: 720 },
+            thumbnail: { url: 'https://via.placeholder.com/480x270', width: 480, height: 270 },
+        };
+    }
+
+    const hash = crypto.createHash('md5').update(imgUrl!).digest('hex').substr(0, 6);
+    const imageBaseDir = `public/video-images2`;
+    fs.ensureDirSync(imageBaseDir);
+
+    const imageFileOriginal = `${imageBaseDir}/${slug}-${hash}-original.jpg`;
+
+    const original = await readOriginalImage(imgUrl, imageFileOriginal);
+    const image = sharp(original);
+    const metadata = await image.metadata();
+
+    const needToGenerateSmallImage = metadata.width! > 480;
+
+    const large = {
+        url: imageFileOriginal.replace('public/', '/'),
+        width: metadata.width!,
+        height: metadata.height!,
+    };
+
+    const thumbnail = large;
+
+    if (needToGenerateSmallImage) {
+        const imageFileSmall = `${imageBaseDir}/${slug}-${hash}-360.jpg`;
+        const { width, height } = await resizeImage(original, 480, imageFileSmall, 75);
+
+        thumbnail.width = width;
+        thumbnail.height = height;
+        thumbnail.url = imageFileSmall.replace('public/', '/');
+    }
+
+    return { image: large, thumbnail };
 }
 
 async function grabDataFromVideoPage(video: Video): Promise<Video> {
@@ -133,14 +140,23 @@ async function grabDataFromVideoPage(video: Video): Promise<Video> {
 
     const dom = new JSDOM(responseBody);
 
-    // TODO: add image and thumbnail
     return { ...video, ...parseDuration(dom.window), ...(await getImages(dom.window, video.slug)) };
 }
 
 (async () => {
+    console.log('Started...');
+
+    console.log('Reading videos from *.md files');
     const videos = readVideosFromMdFiles();
+
+    console.log('Getting duration and images');
     const videosWithDurationAndImage = await Promise.all(videos.map(grabDataFromVideoPage));
 
+    // console.log(videosWithDurationAndImage);
+
+    console.log('Writing json files');
     fs.writeFileSync('content/videos.json', JSON.stringify(videosWithDurationAndImage, null, 4));
     fs.writeFileSync('content/videos.min.json', JSON.stringify(videosWithDurationAndImage));
+
+    console.log('Done.');
 })();
