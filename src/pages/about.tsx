@@ -1,6 +1,13 @@
+import { useEffect } from 'react';
+
 import { NextPage } from 'next';
+import { trackPageview } from 'src/services/tracking';
 
 const AboutPage: NextPage = () => {
+    useEffect(() => {
+        trackPageview('UA-111269764-1');
+    }, []);
+
     return (
         <div className="content">
             <h1 className="page-title">About odetoenjoy.com</h1>

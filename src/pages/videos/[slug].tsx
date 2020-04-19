@@ -9,6 +9,8 @@ import LikeBox from '../../components/LikeBox/LikeBox';
 import VideoItems from '../../components/VideoItems/VideoItems';
 import ShareButtons from '../../components/ShareButtons/ShareButtons';
 import VideoTags from '../../components/VideoTags/VideoTags';
+import { useEffect } from 'react';
+import { trackPageview } from 'src/services/tracking';
 // const Page = props => {
 //     return (
 //         <>
@@ -35,6 +37,10 @@ const VideoPage: NextPage<VideoPageProps> = ({ video, toplist, allVideos }) => {
     //         </div>
     //     </Page>
     // );
+
+    useEffect(() => {
+        trackPageview('UA-111269764-1');
+    }, []);
 
     return (
         <>

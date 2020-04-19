@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 
@@ -21,8 +21,13 @@ type HomePageProps = {
 
 import LikeBox from '../components/LikeBox/LikeBox';
 import VideoItems from '../components/VideoItems/VideoItems';
+import { trackPageview } from 'src/services/tracking';
 
 const Home: React.FC<HomePageProps> = ({ videos, lyrics }) => {
+    useEffect(() => {
+        trackPageview('UA-111269764-1');
+    }, []);
+
     return (
         <>
             <Head>
