@@ -5,7 +5,9 @@ import { trackPageview } from 'src/services/tracking';
 
 const AboutPage: NextPage = () => {
     useEffect(() => {
-        trackPageview('UA-111269764-1');
+        console.log('track about');
+
+        trackPageview();
     }, []);
 
     return (

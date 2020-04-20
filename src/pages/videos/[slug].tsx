@@ -39,7 +39,7 @@ const VideoPage: NextPage<VideoPageProps> = ({ video, toplist, allVideos }) => {
     // );
 
     useEffect(() => {
-        trackPageview('UA-111269764-1');
+        trackPageview();
     }, []);
 
     return (

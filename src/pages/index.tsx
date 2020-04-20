@@ -25,7 +25,7 @@ import { trackPageview } from 'src/services/tracking';
 
 const Home: React.FC<HomePageProps> = ({ videos, lyrics }) => {
     useEffect(() => {
-        trackPageview('UA-111269764-1');
+        trackPageview();
     }, []);
 
     return (

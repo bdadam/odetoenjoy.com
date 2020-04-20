@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 
@@ -7,6 +8,10 @@ import './default.less';
 
 import SiteHeader from '../components/SiteHeader/SiteHeader';
 import SiteFooter from '../components/SiteFooter/SiteFooter';
+
+import { init as initTracking } from '../services/tracking';
+
+typeof window === 'object' && initTracking('UA-111269764-1');
 
 function App({ Component, pageProps }: AppProps) {
     return (
