@@ -5,8 +5,6 @@ import { trackPageview } from 'src/services/tracking';
 
 const AboutPage: NextPage = () => {
     useEffect(() => {
-        console.log('track about');
-
         trackPageview();
     }, []);
 

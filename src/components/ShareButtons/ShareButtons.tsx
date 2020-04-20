@@ -18,9 +18,6 @@ const ShareButtons: React.FC<Props> = ({ title, url }) => {
 
     useEffect(() => {
         // @ts-ignore
-        console.log(navigator.share);
-
-        // @ts-ignore
         setState({ visible: true, native: !!navigator.share });
     }, []);
 
@@ -147,7 +144,7 @@ const ShareButtons: React.FC<Props> = ({ title, url }) => {
                             readOnly={true}
                             value={url}
                             className="video-link"
-                            onClick={e => (e.target as HTMLInputElement).select()}
+                            onClick={(e) => (e.target as HTMLInputElement).select()}
                         />
                         <button className="share-button--copy" onClick={() => navigator.clipboard.writeText(`${url}`)}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">

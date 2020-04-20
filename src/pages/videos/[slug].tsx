@@ -47,6 +47,7 @@ const VideoPage: NextPage<VideoPageProps> = ({ video, toplist, allVideos }) => {
             <VideoPlayer
                 url={video.video.replace('https://www.youtube.com/watch?v=', 'https://www.youtube.com/embed/')}
                 img={video.image.url}
+                title={video.title}
             />
             <div className="content">
                 {/* <iframe src="https://youtube.com/embed/cdwal5Kw3Fc?enablejsapi=1&modestbranding=1" /> */}
@@ -72,9 +73,9 @@ const VideoPage: NextPage<VideoPageProps> = ({ video, toplist, allVideos }) => {
                 <meta name="description" content={video.description} />
                 <link rel="canonical" href={`https://www.odetoenjoy.com/videos/${video.slug}`} />
                 <meta property="og:type" content="video.other" />
-                <meta property="og:image" content={`https://www.odetoenjoy.com${video.image}`} />
-                <meta property="og:image:width" content="480" />
-                <meta property="og:image:height" content="270" />
+                <meta property="og:image" content={`https://www.odetoenjoy.com${video.image.url}`} />
+                <meta property="og:image:width" content={'' + video.image.width} />
+                <meta property="og:image:height" content={'' + video.image.height} />
             </Head>
         </>
     );

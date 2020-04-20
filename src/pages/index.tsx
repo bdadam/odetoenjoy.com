@@ -37,6 +37,7 @@ const Home: React.FC<HomePageProps> = ({ videos, lyrics }) => {
                     content="Ode to Joy is Beethoven's most famous music piece. The official hymn of the European Union. It is perfromed in various styles: from calssical through pop to metal"
                 />
                 <link rel="canonical" href="https://www.odetoenjoy.com/" />
+                <meta property="og:type" content="website" />
             </Head>
 
             <div className="hero-container mb-12 lg:mb-20">

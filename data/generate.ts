@@ -93,7 +93,7 @@ async function getImages(win: DOMWindow, slug: string): Promise<{ image: Image; 
         height: metadata.height!,
     };
 
-    const thumbnail = large;
+    const thumbnail = { ...large };
 
     if (needToGenerateSmallImage) {
         const imageFileSmall = `${imageBaseDir}/${slug}-${hash}-360.jpg`;
