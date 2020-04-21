@@ -148,8 +148,6 @@ function generateSitemap(videos: Video[]) {
     console.log('Getting duration and images');
     const videosWithDurationAndImage = await Promise.all(videos.map(grabDataFromVideoPage));
 
-    // console.log(videosWithDurationAndImage);
-
     console.log('Writing json files');
     fs.writeFileSync('public/videos.json', JSON.stringify(videosWithDurationAndImage, null, 4));
     fs.writeFileSync('public/videos.min.json', JSON.stringify(videosWithDurationAndImage));

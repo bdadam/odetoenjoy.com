@@ -11,7 +11,8 @@
         "start": "next start",
         "test": "start-test 'next build && next start' 3000 jest",
         "data": "tsnd --project data/tsconfig.json data/generate.ts",
-        "data-dev": "tsnd --project data/tsconfig.json --respawn data/generate.ts"
+        "data-dev": "tsnd --project data/tsconfig.json --respawn data/generate.ts",
+        "generate": "ts-node --project data/tsconfig.json data/generate.ts && next build && next export -o dist"
     },
     "repository": {
         "type": "git",
