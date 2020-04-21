@@ -1,6 +1,7 @@
 dist
-dist-server
-
+.next
+out
+.cache
 
 # Created by https://www.gitignore.io/api/node
 
@@ -63,6 +64,5 @@ typings/
 
 # dotenv environment variables file
 .env
-
 
 # End of https://www.gitignore.io/api/node

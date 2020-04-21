@@ -1,0 +1,40 @@
+backend:
+  name: github
+  repo: bdadam/odetoenjoy.com
+  branch: next93
+
+site_url: https://odetoenjoy.com
+display_url: https://odetoenjoy.com
+
+media_folder: 'public/uploads'
+public_folder: '/uploads'
+
+collections:
+  - name: 'video'
+    editor:
+      preview: false
+    label: 'Video'
+    folder: 'content/videos'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Video, name: video, widget: string }
+      - { label: Title, name: title, widget: string, pattern: ['.{10,}', 'Must have at least 10 characters'] }
+      - { label: Quality, name: quality, widget: number, default: 3, valueType: int, min: 1, max: 5 }
+      - { label: Description, name: body, widget: markdown, required: false }
+      - { label: Slug, name: slug, widget: string, required: false }
+      - { label: 'Meta Description', name: metadescription, widget: string, required: false }
+      - { label: Tags, name: tags, widget: list, require: false }
+      # - label: Artists
+      #   name: artists
+      #   widget: list
+      #   required: false
+      #   field:
+      #     label: Artist
+      #     name: artist
+      #     widget: object
+      #     fields:
+      #       - { label: Type, name: type, widget: string }
+      #       - { label: Name, name: name, widget: string }
+      # - { label: Conductor, name: conductor, widget: string }

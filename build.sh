@@ -1,2 +1,2 @@
-npm rebuild node-sass
-npx gulp build
+yarn test
+yarn generate

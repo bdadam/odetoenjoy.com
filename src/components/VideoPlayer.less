@@ -1,0 +1,32 @@
+.video-player {
+    & > div {
+        position: relative;
+        max-height: 70vh;
+
+        &::before {
+            content: '';
+            display: block;
+            position: relative;
+            padding-top: 56.25%;
+        }
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,117 @@
+@media (min-width: 1024px) {
+    .lyrics-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+
+.hero-container {
+    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    max-height: 270px;
+
+    background-image: url(/hero-sm.jpg);
+
+    @media (min-width: 480px) {
+        background-image: url(/hero-lg.jpg);
+    }
+
+    &::before {
+        content: '';
+        // display: block;
+        padding-top: 31.25%;
+        width: 1px;
+        margin-left: -1px;
+        float: left;
+        height: 0;
+    }
+
+    &::after {
+        /* to clear float */
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .page-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        vertical-align: middle;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        font-size: calc(1rem + 1vw);
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+    }
+
+    // h1 {
+    //     // width: 100%;
+    // }
+}
+
+// .video-list {
+//     list-style: none;
+
+//     .video-list__item {
+//         text-decoration: none;
+//         // font-weight: normal;
+//         color: #333;
+//         display: flex;
+//         margin-bottom: 12px;
+
+//         .picture {
+//             width: 160px;
+//             height: 90px;
+//             background-size: cover;
+//         }
+
+//         .content {
+//             flex: 1;
+//             margin-left: 12px;
+//         }
+
+//         .title {
+//             font-weight: bold;
+//             font-size: 0.875rem;
+//         }
+//     }
+// }
+// .video-top-list {
+//     list-style: none;
+
+//     .video-top-list__item {
+//         text-decoration: none;
+//         // font-weight: normal;
+//         color: #333;
+//         // display: flex;
+//         display: block;
+//         margin-bottom: 20px;
+
+//         .picture {
+//             // width: 160px;
+//             // height: 90px;
+//             width: 100%;
+//             height: 56.25vw;
+//             // margin-left: -20px;
+//             background-size: cover;
+//         }
+
+//         .content {
+//             margin-top: 12px;
+//         }
+
+//         .title {
+//             font-weight: bold;
+//             // font-size: 0.875rem;
+//         }
+//     }
+// }
