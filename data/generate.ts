@@ -40,7 +40,7 @@ const readOriginalImage = async (url: string, file: string) => {
         return fs.readFile(file);
     }
 
-    const buffer = await got(url, { responseType: 'buffer', resolveBodyOnly: true });
+    const buffer = await got(url).buffer();
     fs.writeFileSync(file, buffer);
 
     return buffer;
