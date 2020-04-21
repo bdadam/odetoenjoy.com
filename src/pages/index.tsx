@@ -31,13 +31,16 @@ const Home: React.FC<HomePageProps> = ({ videos, lyrics }) => {
     return (
         <>
             <Head>
-                <title>Beethoven's Ode to Joy in various forms performed by various artists - Ode to Enjoy</title>
+                <title>Beethoven's Ode to Joy in various forms performed by various artists</title>
                 <meta
                     name="description"
                     content="Ode to Joy is Beethoven's most famous music piece. The official hymn of the European Union. It is perfromed in various styles: from calssical through pop to metal"
                 />
                 <link rel="canonical" href="https://www.odetoenjoy.com/" />
                 <meta property="og:type" content="website" />
+                <meta property="og:image" content="https://www.odetoenjoy.com/fb-cover.jpg" />
+                <meta property="og:image:width" content="1800" />
+                <meta property="og:image:height" content="1197" />
             </Head>
 
             <div className="hero-container mb-12 lg:mb-20">
