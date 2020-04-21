@@ -18,7 +18,7 @@ const VideoItems: React.FC<{ videos: Video[]; modifier?: 'small' }> = ({ videos,
                     <Link href="/videos/[slug]" as={`/videos/${v.slug}`}>
                         <a className="video-item__card">
                             <div className="video-item__picture-frame">
-                                <img src={v.thumbnail.url} />
+                                <img src={v.thumbnail.url} alt="" />
                                 <span className="video-item__duration">{v.durationFormatted}</span>
                             </div>
 
