@@ -123,6 +123,22 @@ async function grabDataFromVideoPage(video: Video): Promise<Video> {
     return { ...video, ...parseDuration(dom.window), ...(await getImages(dom.window, video.slug)) };
 }
 
+function generateSitemap(videos: Video[]) {
+    const staticRoutes = ['/', '/about']
+        .map((path) => `https://www.odetoenjoy.com${path}`)
+        .map((url) => `<url><loc>${url}</loc></url>`)
+        .join('\n');
+
+    const videoRoutes = videos
+        .map((video) => `https://www.odetoenjoy.com/videos/${video.slug}`)
+        .map((url) => `<url><loc>${url}</loc></url>`)
+        .join('\n');
+
+    const xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${staticRoutes}\n${videoRoutes}\n</urlset>`;
+
+    fs.writeFileSync('public/sitemap.xml', xml);
+}
+
 (async () => {
     console.log('Started...');
 
@@ -137,6 +153,9 @@ async function grabDataFromVideoPage(video: Video): Promise<Video> {
     console.log('Writing json files');
     fs.writeFileSync('public/videos.json', JSON.stringify(videosWithDurationAndImage, null, 4));
     fs.writeFileSync('public/videos.min.json', JSON.stringify(videosWithDurationAndImage));
+
+    console.log('Writing sitemap.xml');
+    generateSitemap(videosWithDurationAndImage);
 
     console.log('Done.');
 })();
