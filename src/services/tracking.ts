@@ -53,11 +53,11 @@ const collect = (params: Record<string, string | number>) => {
         .map((key) => `${key}=${encodeURIComponent(params[key])}`)
         .join('&');
 
-    if ('sendBeacon' in navigator) {
-        navigator.sendBeacon('https://www.google-analytics.com/r/collect', new Blob([JSON.stringify(params)]));
-    } else {
-        new Image().src = 'https://www.google-analytics.com/r/collect?' + query;
-    }
+    // if ('sendBeacon' in navigator) {
+    //     navigator.sendBeacon('https://www.google-analytics.com/r/collect', new Blob([query]));
+    // } else {
+    new Image().src = 'https://www.google-analytics.com/r/collect?' + query;
+    // }
 };
 
 export const trackPageview = () => {

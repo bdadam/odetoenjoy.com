@@ -40,7 +40,7 @@ const VideoPage: NextPage<VideoPageProps> = ({ video, toplist, allVideos }) => {
 
     useEffect(() => {
         trackPageview();
-    }, []);
+    }, [video.slug]);
 
     return (
         <>
