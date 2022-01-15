@@ -40,7 +40,7 @@
         "js-yaml": "^3.13.1",
         "jsdom": "^16.2.2",
         "less": "^3.11.1",
-        "marked": "^1.0.0",
+        "marked": "^4.0.10",
         "mem": "^6.1.0",
         "metatag-crawler": "^2.1.0",
         "minireset.css": "^0.0.6",
